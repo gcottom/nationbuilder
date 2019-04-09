@@ -15,6 +15,8 @@ th, td{padding: 15px; text-align: left;}</style>
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<div style="float: right; width:50%;" class="container"><a href="editNationName">Edit Nation Name</a><br>
+<a href="editNationCapitol">Edit Nation Capitol</a></div>
 <div class="container">
 <h1>My Information</h1>
 <p>Username:${pageContext.request.userPrincipal.name}</p>
@@ -52,4 +54,4 @@ th, td{padding: 15px; text-align: left;}</style>
 
 
 </table></div>
-<div><a href="editNationName">Edit Nation Name</a></div></body>
+</body>
