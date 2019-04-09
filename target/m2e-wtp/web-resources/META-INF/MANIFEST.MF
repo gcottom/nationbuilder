@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Gage
+Build-Jdk: 12
+Implementation-Title: NationBuilder
+Implementation-Version: 2.1.1.RELEASE
+Implementation-Vendor-Id: org.springframework.boot
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/NationBuilder
+Created-By: Maven Integration for Eclipse
+
