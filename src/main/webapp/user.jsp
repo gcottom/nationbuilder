@@ -11,6 +11,7 @@ table, th, td {border: 1px solid black;}
 td{height: 40px;}
 th, td{padding: 15px; text-align: left;}</style>
 <meta charset="utf-8">
+<meta http-equiv="refresh" content="30">
     <title>View User Info</title>
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 </head>

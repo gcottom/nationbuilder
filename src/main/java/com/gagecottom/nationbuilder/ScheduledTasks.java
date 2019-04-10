@@ -92,6 +92,81 @@ public class ScheduledTasks {
 			if(currentNation.getResource4().equals("Coal")) {
 				resources.setProduction(resources.getProduction()+2);
 			}
+			
+			if(currentNation.getResource1().equals("Oil")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource2().equals("Oil")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource3().equals("Oil")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource4().equals("Oil")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			
+			if(currentNation.getResource1().equals("Uranium")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource2().equals("Uranium")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource3().equals("Uranium")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource4().equals("Uranium")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			
+			if(currentNation.getResource1().equals("Meat")) {
+				resources.setPopulation(resources.getPopulation()+2);
+			}
+			if(currentNation.getResource2().equals("Meat")) {
+				resources.setPopulation(resources.getPopulation()+2);
+			}
+			if(currentNation.getResource3().equals("Meat")) {
+				resources.setPopulation(resources.getPopulation()+2);
+			}
+			if(currentNation.getResource4().equals("Meat")) {
+				resources.setPopulation(resources.getPopulation()+2);
+			}
+			if(currentNation.getResource1().equals("Silver")) {
+				resources.setMoney(resources.getMoney()+3);
+			}
+			if(currentNation.getResource2().equals("Silver")) {
+				resources.setMoney(resources.getMoney()+3);
+			}
+			if(currentNation.getResource3().equals("Silver")) {
+				resources.setMoney(resources.getMoney()+3);
+			}
+			if(currentNation.getResource4().equals("Silver")) {
+				resources.setMoney(resources.getMoney()+3);
+			}
+			if(currentNation.getResource1().equals("Cotton")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource2().equals("Cotton")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource3().equals("Cotton")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource4().equals("Cotton")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource1().equals("Wood")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource2().equals("Wood")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource3().equals("Wood")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getResource4().equals("Wood")) {
+				resources.setProduction(resources.getProduction()+2);
+			}
 			currentNation.setMoney(currentNation.getMoney()+resources.getMoney());
 			currentNation.setTechnology(currentNation.getTechnology()+resources.getTechnology());
 			currentNation.setPopulation(currentNation.getPopulation()+resources.getPopulation());
