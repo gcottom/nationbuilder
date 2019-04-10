@@ -19,8 +19,16 @@ th, td{padding: 15px; text-align: left;}</style>
 <div style="float: right; width:50%;" class="container"><a href="editNationName">Edit Nation Name</a><br>
 <a href="editNationCapitol">Edit Nation Capitol</a><br>
 <a href="editResources">Edit Resources</a><br>
-<a href="editGovernment">Edit Government</a></div>
-<div class="container">
+<a href="editGovernment">Edit Government</a><br><br>
+<c:choose>
+<c:when test="${nation.isHasLibrary()}">
+</c:when>
+<c:otherwise>
+<a href="purchaseLibrary">Purchase Library</a>
+</c:otherwise>
+</c:choose>
+</div>
+<div class="container" style="float: left; width:50%;">
 <h1>My Information</h1>
 <p>Username:${pageContext.request.userPrincipal.name}</p>
 <table>

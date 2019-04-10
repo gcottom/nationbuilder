@@ -33,6 +33,8 @@ public Nation findNationById(int id) {
 	Optional<String> resource4 = nation.map(Nation::getResource4);
 	Optional<Integer> population = nation.map(Nation::getPopulation);
 	Optional<Integer> production = nation.map(Nation::getProduction);
+	Optional<Boolean> hasLibrary= nation.map(Nation::isHasLibrary);
+	boolean newHasLibrary = hasLibrary.get();
 	int newProduction = production.get();
 	String newNationName = nationName.get();
 	int NewNationId= nationId.get();
@@ -57,6 +59,7 @@ public Nation findNationById(int id) {
 	newNation.setResource2(newResource2);
 	newNation.setResource3(newResource3);
 	newNation.setResource4(newResource4);
+	newNation.setHasLibrary(newHasLibrary);
 	return newNation;
 }
 public void deleteNation(Nation nation) {

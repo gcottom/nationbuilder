@@ -59,6 +59,7 @@ public class UserController {
         nation.setResource4("Wood");
         nation.setPopulation(100);
         nation.setProduction(25);
+        nation.setHasLibrary(false);
         nationService.createNation(nation);
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
 

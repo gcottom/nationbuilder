@@ -18,7 +18,14 @@ public class Nation {
 	private int technology;
 	private int population;
 	private int production;
+	private boolean hasLibrary = false;
 	
+	public boolean isHasLibrary() {
+		return hasLibrary;
+	}
+	public void setHasLibrary(boolean hasLibrary) {
+		this.hasLibrary = hasLibrary;
+	}
 	public int getProduction() {
 		return production;
 	}
