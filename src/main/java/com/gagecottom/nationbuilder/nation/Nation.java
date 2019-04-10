@@ -16,7 +16,21 @@ public class Nation {
 	private String resource4;
 	private int money;
 	private int technology;
+	private int population;
+	private int production;
 	
+	public int getProduction() {
+		return production;
+	}
+	public void setProduction(int production) {
+		this.production = production;
+	}
+	public int getPopulation() {
+		return population;
+	}
+	public void setPopulation(int population) {
+		this.population = population;
+	}
 	public String getGovernment() {
 		return government;
 	}

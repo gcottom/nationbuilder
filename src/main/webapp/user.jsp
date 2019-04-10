@@ -32,6 +32,11 @@ th, td{padding: 15px; text-align: left;}</style>
 <td><p>Technology</p></td>
 <td><p>${nation.getTechnology()}</p></td>
 </tr>
+<tr><td><p>Population</p></td>
+<td>${nation.getPopulation()}</td></tr>
+<tr>
+<td><p>Production</p></td>
+<td>${nation.getProduction()}</td></tr>
 <tr>
 <td><p>Nation Name</p></td>
 <td><p>${nation.getNationName()}</p></td>

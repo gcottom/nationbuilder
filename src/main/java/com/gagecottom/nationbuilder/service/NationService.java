@@ -1,5 +1,7 @@
 package com.gagecottom.nationbuilder.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,18 +31,24 @@ public Nation findNationById(int id) {
 	Optional<String> resource2 = nation.map(Nation::getResource2);
 	Optional<String> resource3 = nation.map(Nation::getResource3);
 	Optional<String> resource4 = nation.map(Nation::getResource4);
+	Optional<Integer> population = nation.map(Nation::getPopulation);
+	Optional<Integer> production = nation.map(Nation::getProduction);
+	int newProduction = production.get();
 	String newNationName = nationName.get();
 	int NewNationId= nationId.get();
 	int newTechnology = technology.get();
 	int newMoney = money.get();
+	int newPopulation = population.get();
 	String newNationCapitol = nationCapitol.get();
 	String newGovernment = government.get();
 	String newResource1 = resource1.get();
 	String newResource2 = resource2.get();
 	String newResource3 = resource3.get();
 	String newResource4 = resource4.get();
+	newNation.setProduction(newProduction);
 	newNation.setId(NewNationId);
 	newNation.setMoney(newMoney);
+	newNation.setPopulation(newPopulation);
 	newNation.setTechnology(newTechnology);
 	newNation.setNationName(newNationName);
 	newNation.setNationCapitol(newNationCapitol);
@@ -53,5 +61,10 @@ public Nation findNationById(int id) {
 }
 public void deleteNation(Nation nation) {
 	nationRepository.delete(nation);
+}
+public List<Nation> listAllNations(){
+	List<Nation> nations = new ArrayList<>();	
+	nationRepository.findAll().forEach(nations::add);
+			return nations;
 }
 }
