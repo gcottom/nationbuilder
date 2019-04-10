@@ -13,21 +13,9 @@
 <div class="container">
 <h1>My Information</h1>
 <p>Username:${pageContext.request.userPrincipal.name}</p><br>
-<p>Current Resources:${nation.getResource1()},${nation.getResource2()},${nation.getResource3()},${nation.getResource4()}</p><br>
-<form:form method="POST" action="${contextPath}/editResources" class="form-editresources" modelAttribute="nation">
-<form:select path="resource1">
-<form:options items="${resources}" />
-</form:select>
-<br>
-<form:select path="resource2">
-<form:options items="${resources}" />
-</form:select>
-<br>
-<form:select path="resource3">
-<form:options items="${resources}" />
-</form:select>
-<br>
-<form:select path="resource4">
+<p>Current Government:${nation.getGovernment()}</p><br>
+<form:form method="POST" action="${contextPath}/editGovernment" class="form-editgovernment" modelAttribute="nation">
+<form:select path="government">
 <form:options items="${resources}" />
 </form:select>
 

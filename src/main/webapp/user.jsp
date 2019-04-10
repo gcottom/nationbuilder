@@ -17,7 +17,8 @@ th, td{padding: 15px; text-align: left;}</style>
 <body>
 <div style="float: right; width:50%;" class="container"><a href="editNationName">Edit Nation Name</a><br>
 <a href="editNationCapitol">Edit Nation Capitol</a><br>
-<a href="editResources">Edit Resources</a></div>
+<a href="editResources">Edit Resources</a><br>
+<a href="editGovernment">Edit Government</a></div>
 <div class="container">
 <h1>My Information</h1>
 <p>Username:${pageContext.request.userPrincipal.name}</p>
