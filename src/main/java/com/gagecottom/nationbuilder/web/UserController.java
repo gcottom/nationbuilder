@@ -61,6 +61,7 @@ public class UserController {
         nation.setPopulationLimit(1000);
         nation.setProduction(25);
         nation.setHasLibrary(false);
+        nation.setHasMarket(false);
         nationService.createNation(nation);
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
 

@@ -26,7 +26,16 @@ th, td{padding: 15px; text-align: left;}</style>
 <c:when test="${nation.isHasLibrary()}">
 </c:when>
 <c:otherwise>
+<br>
 <a href="buildLibrary">Build Library</a>
+</c:otherwise>
+</c:choose>
+<br>
+<c:choose>
+<c:when test="${nation.isHasMarket()}">
+</c:when>
+<c:otherwise>
+<a href="buildMarket">Build Market</a>
 </c:otherwise>
 </c:choose>
 </div>
@@ -73,7 +82,14 @@ th, td{padding: 15px; text-align: left;}</style>
 <td><p>Improvements</p></td>
 <td><p><c:choose>
 <c:when test="${nation.isHasLibrary()}">
-Library
+Library<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isHasMarket()}">
+Market<br>
 </c:when>
 <c:otherwise>
 </c:otherwise>

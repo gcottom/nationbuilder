@@ -9,15 +9,15 @@
 </head>
 <body>
 <div>
-<p>In order to build a library you must meet the following requirements:<br>
+<p>In order to build a market you must meet the following requirements:<br>
 Technology:${nation.getTechnology()}/25<br>
 Production: ${nation.getProduction()}/50<br>
 Money: ${nation.getMoney()}/500</p>
-<p>Library provides: +5 technology</p>
+<p>Market provides:+5 Money</p>
 <c:choose>
 <c:when test ="${canBuild.getCanBuild()}">
 <form>
-<a href="buildLibrary-gc23">Click here to build library!</a>
+<a href="buildMarket-gc23">Click here to build market!</a>
 </c:when>
 <c:otherwise>
 <p>Unable to build at this time!</p>

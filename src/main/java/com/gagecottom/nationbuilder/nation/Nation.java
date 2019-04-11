@@ -20,7 +20,14 @@ public class Nation {
 	private int populationLimit;
 	private int production;
 	private boolean hasLibrary = false;
+	private boolean hasMarket = false;
 	
+	public boolean isHasMarket() {
+		return hasMarket;
+	}
+	public void setHasMarket(boolean hasMarket) {
+		this.hasMarket = hasMarket;
+	}
 	public int getPopulationLimit() {
 		return populationLimit;
 	}
