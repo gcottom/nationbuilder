@@ -21,7 +21,22 @@ public class Nation {
 	private int production;
 	private boolean hasLibrary = false;
 	private boolean hasMarket = false;
+	private boolean hasWorkshop = false;
+	private boolean hasBasicFarm = false;
 	
+	
+	public boolean isHasWorkshop() {
+		return hasWorkshop;
+	}
+	public void setHasWorkshop(boolean hasWorkshop) {
+		this.hasWorkshop = hasWorkshop;
+	}
+	public boolean isHasBasicFarm() {
+		return hasBasicFarm;
+	}
+	public void setHasBasicFarm(boolean hasBasicFarm) {
+		this.hasBasicFarm = hasBasicFarm;
+	}
 	public boolean isHasMarket() {
 		return hasMarket;
 	}

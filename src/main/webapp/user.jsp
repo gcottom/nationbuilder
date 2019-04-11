@@ -26,16 +26,29 @@ th, td{padding: 15px; text-align: left;}</style>
 <c:when test="${nation.isHasLibrary()}">
 </c:when>
 <c:otherwise>
-<br>
-<a href="buildLibrary">Build Library</a>
+
+<a href="buildLibrary">Build Library</a><br>
 </c:otherwise>
 </c:choose>
-<br>
 <c:choose>
 <c:when test="${nation.isHasMarket()}">
 </c:when>
 <c:otherwise>
-<a href="buildMarket">Build Market</a>
+<a href="buildMarket">Build Market</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isHasBasicFarm()}">
+</c:when>
+<c:otherwise>
+<a href="buildBasicFarm">Build Basic Farm</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isHasWorkshop()}">
+</c:when>
+<c:otherwise>
+<a href="buildWorkshop">Build Workshop</a><br>
 </c:otherwise>
 </c:choose>
 </div>
@@ -90,6 +103,20 @@ Library<br>
 <c:choose>
 <c:when test="${nation.isHasMarket()}">
 Market<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isHasWorkshop()}">
+Workshop<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isHasBasicFarm()}">
+Basic Farm<br>
 </c:when>
 <c:otherwise>
 </c:otherwise>

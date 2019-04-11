@@ -62,6 +62,8 @@ public class UserController {
         nation.setProduction(25);
         nation.setHasLibrary(false);
         nation.setHasMarket(false);
+        nation.setHasBasicFarm(false);
+        nation.setHasWorkshop(false);
         nationService.createNation(nation);
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
 

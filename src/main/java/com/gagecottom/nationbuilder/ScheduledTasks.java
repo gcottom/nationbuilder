@@ -67,6 +67,12 @@ public class ScheduledTasks {
 			if(currentNation.isHasMarket()) {
 				resources.setMoney(resources.getMoney()+3);
 			}
+			if(currentNation.isHasBasicFarm()) {
+				resources.setPopulation(resources.getPopulation()+3);
+			}
+			if(currentNation.isHasWorkshop()) {
+				resources.setProduction(resources.getProduction()+3);
+			}
 			//resource yields
 			if(currentNation.getResource1().equals("Gold")) {
 				resources.setMoney(resources.getMoney()+5);
