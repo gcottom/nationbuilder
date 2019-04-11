@@ -62,10 +62,10 @@ public class ScheduledTasks {
 			
 			//improvement yields
 			if(currentNation.isHasLibrary()) {
-				resources.setTechnology(resources.getTechnology()+5);
+				resources.setTechnology(resources.getTechnology()+3);
 			}
 			if(currentNation.isHasMarket()) {
-				resources.setMoney(resources.getMoney()+5);
+				resources.setMoney(resources.getMoney()+3);
 			}
 			//resource yields
 			if(currentNation.getResource1().equals("Gold")) {

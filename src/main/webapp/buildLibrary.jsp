@@ -13,7 +13,7 @@
 Technology:${nation.getTechnology()}/25<br>
 Production: ${nation.getProduction()}/50<br>
 Money: ${nation.getMoney()}/500</p>
-<p>Library provides: +5 technology</p>
+<p>Library provides: +3 technology</p>
 <c:choose>
 <c:when test ="${canBuild.getCanBuild()}">
 <form>
