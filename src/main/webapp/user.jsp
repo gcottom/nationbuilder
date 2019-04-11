@@ -20,6 +20,8 @@ th, td{padding: 15px; text-align: left;}</style>
 <a href="editNationCapitol">Edit Nation Capitol</a><br>
 <a href="editResources">Edit Resources</a><br>
 <a href="editGovernment">Edit Government</a><br><br>
+<br>
+<a href="buyHousing">Buy Housing</a><br>
 <c:choose>
 <c:when test="${nation.isHasLibrary()}">
 </c:when>
@@ -43,6 +45,8 @@ th, td{padding: 15px; text-align: left;}</style>
 </tr>
 <tr><td><p>Population</p></td>
 <td>${nation.getPopulation()}</td></tr>
+<tr><td><p>Population Limit</p></td>
+<td>${nation.getPopulationLimit()}</td></tr>
 <tr>
 <td><p>Production</p></td>
 <td>${nation.getProduction()}</td></tr>

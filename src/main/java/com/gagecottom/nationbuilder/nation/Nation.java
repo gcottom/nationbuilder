@@ -17,9 +17,16 @@ public class Nation {
 	private int money;
 	private int technology;
 	private int population;
+	private int populationLimit;
 	private int production;
 	private boolean hasLibrary = false;
 	
+	public int getPopulationLimit() {
+		return populationLimit;
+	}
+	public void setPopulationLimit(int populationLimit) {
+		this.populationLimit = populationLimit;
+	}
 	public boolean isHasLibrary() {
 		return hasLibrary;
 	}
@@ -36,7 +43,12 @@ public class Nation {
 		return population;
 	}
 	public void setPopulation(int population) {
-		this.population = population;
+		if(population<=populationLimit) {
+			this.population = population;
+		}
+		else {
+			this.population = populationLimit;
+		}
 	}
 	public String getGovernment() {
 		return government;
