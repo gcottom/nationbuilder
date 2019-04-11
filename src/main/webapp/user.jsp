@@ -24,7 +24,7 @@ th, td{padding: 15px; text-align: left;}</style>
 <c:when test="${nation.isHasLibrary()}">
 </c:when>
 <c:otherwise>
-<a href="purchaseLibrary">Purchase Library</a>
+<a href="buildLibrary">Build Library</a>
 </c:otherwise>
 </c:choose>
 </div>
@@ -65,6 +65,16 @@ th, td{padding: 15px; text-align: left;}</style>
 <p>${nation.getResource3()}</p>
 <p>${nation.getResource4()}</p></td>
 </tr>
+<tr>
+<td><p>Improvements</p></td>
+<td><p><c:choose>
+<c:when test="${nation.isHasLibrary()}">
+Library
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+</p>
 
 
 

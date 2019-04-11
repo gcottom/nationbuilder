@@ -18,7 +18,12 @@
 
         
         <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
-		<p><a href="user">User Page</a></p>    
+		<p><a href="user">User Page</a></p> 
+		<p><a href="editNationName">Set Nation Name</a> </p>
+		<p><a href="editNationCapitol">Set Nation Capitol</a></p>
+		<p><a href="editGovernment">Set Government</a></p>
+		<p><a href="editResources">Set Resources</a></p>
+		 
     </c:if>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

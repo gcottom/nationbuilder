@@ -14,6 +14,11 @@
 <h1>My Information</h1>
 <p>Username:${pageContext.request.userPrincipal.name}</p><br>
 <p>Current Government:${nation.getGovernment()}</p><br>
+<h3>Information:</h3>
+<p>Democracy:+4 money, +1 population, +1 production</p>
+<p>Monarchy: +3 money, +2 population, +1 production</p>
+<p>Communism: +2 money, +2 population, +2 production</p>
+<p>Republic: +3 money, +1 population, +2 production</p>
 <form:form method="POST" action="${contextPath}/editGovernment" class="form-editgovernment" modelAttribute="nation">
 <form:select path="government">
 <form:options items="${resources}" />

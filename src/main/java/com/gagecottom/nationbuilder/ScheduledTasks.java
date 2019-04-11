@@ -22,7 +22,7 @@ public class ScheduledTasks {
 	NationService nationService = new NationService();
     private static final Logger logger = LoggerFactory.getLogger(ScheduledTasks.class);
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-    @Scheduled(fixedRate =30000)
+    @Scheduled(fixedRate =1000)
     public void Simulate() {
     	List<Nation> nations = new ArrayList<Nation>();
 		Nation currentNation= new Nation();
@@ -37,7 +37,34 @@ public class ScheduledTasks {
 			currentNation.setProduction(currentNation.getProduction()+1);
 		
 			ResourceSet resources = new ResourceSet();
+			//Government Bonus
+			if(currentNation.getGovernment().equals("Democracy")) {
+				resources.setMoney(resources.getMoney()+4);
+				resources.setPopulation(resources.getPopulation()+1);
+				resources.setProduction(resources.getProduction()+1);
+			}
+			if(currentNation.getGovernment().equals("Monarchy")) {
+				resources.setMoney(resources.getMoney()+3);
+				resources.setPopulation(resources.getPopulation()+2);
+				resources.setProduction(resources.getProduction()+1);
+			}
+			if(currentNation.getGovernment().equals("Communism")) {
+				resources.setMoney(resources.getMoney()+2);
+				resources.setPopulation(resources.getPopulation()+2);
+				resources.setProduction(resources.getProduction()+2);
+			}
+			if(currentNation.getGovernment().equals("Republic")) {
+				resources.setMoney(resources.getMoney()+3);
+				resources.setPopulation(resources.getPopulation()+1);
+				resources.setProduction(resources.getProduction()+2);
+			}
 			
+			
+			//improvement yields
+			if(currentNation.isHasLibrary()) {
+				resources.setTechnology(resources.getTechnology()+5);
+			}
+			//resource yields
 			if(currentNation.getResource1().equals("Gold")) {
 				resources.setMoney(resources.getMoney()+5);
 			}
@@ -53,16 +80,16 @@ public class ScheduledTasks {
 			
 			
 			if(currentNation.getResource1().equals("Water")) {
-				resources.setPopulation(resources.getPopulation()+2);
+				resources.setPopulation(resources.getPopulation()+3);
 			}
 			if(currentNation.getResource2().equals("Water")) {
-				resources.setPopulation(resources.getPopulation()+2);
+				resources.setPopulation(resources.getPopulation()+3);
 			}
 			if(currentNation.getResource3().equals("Water")) {
-				resources.setPopulation(resources.getPopulation()+2);
+				resources.setPopulation(resources.getPopulation()+3);
 			}
 			if(currentNation.getResource4().equals("Water")) {
-				resources.setPopulation(resources.getPopulation()+2);
+				resources.setPopulation(resources.getPopulation()+3);
 			}
 			
 			
@@ -107,16 +134,16 @@ public class ScheduledTasks {
 			}
 			
 			if(currentNation.getResource1().equals("Uranium")) {
-				resources.setProduction(resources.getProduction()+2);
+				resources.setProduction(resources.getProduction()+1);
 			}
 			if(currentNation.getResource2().equals("Uranium")) {
-				resources.setProduction(resources.getProduction()+2);
+				resources.setProduction(resources.getProduction()+1);
 			}
 			if(currentNation.getResource3().equals("Uranium")) {
-				resources.setProduction(resources.getProduction()+2);
+				resources.setProduction(resources.getProduction()+1);
 			}
 			if(currentNation.getResource4().equals("Uranium")) {
-				resources.setProduction(resources.getProduction()+2);
+				resources.setProduction(resources.getProduction()+1);
 			}
 			
 			if(currentNation.getResource1().equals("Meat")) {
@@ -156,16 +183,16 @@ public class ScheduledTasks {
 				resources.setProduction(resources.getProduction()+2);
 			}
 			if(currentNation.getResource1().equals("Wood")) {
-				resources.setProduction(resources.getProduction()+2);
+				resources.setProduction(resources.getProduction()+3);
 			}
 			if(currentNation.getResource2().equals("Wood")) {
-				resources.setProduction(resources.getProduction()+2);
+				resources.setProduction(resources.getProduction()+3);
 			}
 			if(currentNation.getResource3().equals("Wood")) {
-				resources.setProduction(resources.getProduction()+2);
+				resources.setProduction(resources.getProduction()+3);
 			}
 			if(currentNation.getResource4().equals("Wood")) {
-				resources.setProduction(resources.getProduction()+2);
+				resources.setProduction(resources.getProduction()+3);
 			}
 			currentNation.setMoney(currentNation.getMoney()+resources.getMoney());
 			currentNation.setTechnology(currentNation.getTechnology()+resources.getTechnology());
