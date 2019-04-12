@@ -31,7 +31,36 @@ public class Nation {
 	private boolean level5 =false;
 	private boolean level6 = false;
 	private boolean level7 = false;
+	private int productionTurn=0;
+	private int populationTurn=0;
+	private int technologyTurn=0;
+	private int moneyTurn=0;
 	
+	
+	public int getProductionTurn() {
+		return productionTurn;
+	}
+	public void setProductionTurn(int productionTurn) {
+		this.productionTurn = productionTurn;
+	}
+	public int getPopulationTurn() {
+		return populationTurn;
+	}
+	public void setPopulationTurn(int populationTurn) {
+		this.populationTurn = populationTurn;
+	}
+	public int getTechnologyTurn() {
+		return technologyTurn;
+	}
+	public void setTechnologyTurn(int technologyTurn) {
+		this.technologyTurn = technologyTurn;
+	}
+	public int getMoneyTurn() {
+		return moneyTurn;
+	}
+	public void setMoneyTurn(int moneyTurn) {
+		this.moneyTurn = moneyTurn;
+	}
 	public boolean isLevel3() {
 		return level3;
 	}

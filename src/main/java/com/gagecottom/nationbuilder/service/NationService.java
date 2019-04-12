@@ -45,6 +45,14 @@ public Nation findNationById(int id) {
 	Optional<Boolean> level4 = nation.map(Nation::isLevel4);
 	Optional<Boolean> level5 = nation.map(Nation::isLevel5);
 	Optional<Boolean> level6 = nation.map(Nation::isLevel6);
+	Optional<Integer> productionTurn = nation.map(Nation::getProductionTurn);
+	Optional<Integer> populationTurn = nation.map(Nation::getPopulationTurn);
+	Optional<Integer> technologyTurn = nation.map(Nation::getTechnologyTurn);
+	Optional<Integer> moneyTurn = nation.map(Nation::getMoneyTurn);
+	int newProdTurn = productionTurn.get();
+	int newTechTurn = technologyTurn.get();
+	int newPopTurn = populationTurn.get();
+	int newMoneyTurn = moneyTurn.get();
 	boolean newLevel1 = level1.get();
 	boolean newLevel2 = level2.get();
 	boolean newLevel3 = level3.get();
@@ -93,6 +101,10 @@ public Nation findNationById(int id) {
 	newNation.setLevel4(newLevel4);
 	newNation.setLevel5(newLevel5);
 	newNation.setLevel6(newLevel6);
+	newNation.setPopulationTurn(newPopTurn);
+	newNation.setTechnologyTurn(newTechTurn);
+	newNation.setMoneyTurn(newMoneyTurn);
+	newNation.setProductionTurn(newProdTurn);
 	return newNation;
 }
 public void deleteNation(Nation nation) {

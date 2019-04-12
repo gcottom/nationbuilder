@@ -1,4 +1,4 @@
-package com.gagecottom.nationbuilder.improvements;
+package com.gagecottom.nationbuilder.improvements.level1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import com.gagecottom.nationbuilder.improvements.CanBuild;
 import com.gagecottom.nationbuilder.model.User;
 import com.gagecottom.nationbuilder.nation.Nation;
 import com.gagecottom.nationbuilder.service.NationService;

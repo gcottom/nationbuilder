@@ -22,7 +22,7 @@ public class ScheduledTasks {
 	NationService nationService = new NationService();
     private static final Logger logger = LoggerFactory.getLogger(ScheduledTasks.class);
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-    @Scheduled(fixedRate =1000)
+    @Scheduled(fixedRate =200)
     public void Simulate() {
     	List<Nation> nations = new ArrayList<Nation>();
 		Nation currentNation= new Nation();
@@ -207,6 +207,10 @@ public class ScheduledTasks {
 			currentNation.setTechnology(currentNation.getTechnology()+resources.getTechnology());
 			currentNation.setPopulation(currentNation.getPopulation()+resources.getPopulation());
 			currentNation.setProduction(currentNation.getProduction()+resources.getProduction());
+			currentNation.setProductionTurn(resources.getProduction()+1);
+			currentNation.setPopulationTurn(resources.getPopulation()+1);
+			currentNation.setMoneyTurn(resources.getMoney()+1);
+			currentNation.setTechnologyTurn(resources.getTechnology()+1);
 			nationService.createNation(currentNation);
 		}
 		

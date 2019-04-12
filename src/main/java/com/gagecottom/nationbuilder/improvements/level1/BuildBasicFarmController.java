@@ -1,4 +1,4 @@
-package com.gagecottom.nationbuilder.improvements;
+package com.gagecottom.nationbuilder.improvements.level1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -8,18 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import com.gagecottom.nationbuilder.improvements.CanBuild;
 import com.gagecottom.nationbuilder.model.User;
 import com.gagecottom.nationbuilder.nation.Nation;
 import com.gagecottom.nationbuilder.service.NationService;
 import com.gagecottom.nationbuilder.service.UserService;
-
 @Controller
-public class BuildHousingController {
+public class BuildBasicFarmController {
 	@Autowired
 	private UserService userService;
 	@Autowired
 	private NationService nationService;
-	@GetMapping("/buyHousing")
+	@GetMapping("/buildBasicFarm")
 	public String editResources(Model model) {
 		Nation nation = new Nation();
     	String username;
@@ -34,14 +34,14 @@ public class BuildHousingController {
     	nation =nationService.findNationById(user.getId());
     	model.addAttribute("nation", nation);
     	CanBuild canBuild = new CanBuild();
-    	if(nation.getMoney()>=500&&nation.getProduction()>=100) {
+    	if(nation.getMoney()>=500&&nation.getProduction()>=50&&nation.getTechnology()>=25&&nation.isHasBasicFarm()==false) {
     		canBuild.setCanBuild(true);
     	}
     	model.addAttribute("canBuild", canBuild);
-    	return "buildHousing";
+    	return "buildBasicFarm";
 	}
 	
-	@GetMapping ("/buyHousing-gc23")
+	@GetMapping ("/buildBasicFarm-gc23")
 	public String editResources(@ModelAttribute("nation") Nation nNation) {
 		Nation nation = new Nation();
     	String username;
@@ -54,9 +54,10 @@ public class BuildHousingController {
     	
     	User user=userService.findByUsername(username);
     	nation =nationService.findNationById(user.getId());
-		nation.setProduction(nation.getProduction()-100);
+		nation.setHasBasicFarm(true);
+		nation.setProduction(nation.getProduction()-50);
 		nation.setMoney(nation.getMoney()-500);
-		nation.setPopulationLimit(nation.getPopulationLimit()+1000);
+		nation.setTechnology(nation.getTechnology()-25);
 		nationService.createNation(nation);
 		return "redirect:/user";
 	}

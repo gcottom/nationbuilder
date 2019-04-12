@@ -1,4 +1,4 @@
-package com.gagecottom.nationbuilder.improvements;
+package com.gagecottom.nationbuilder.improvements.level1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -7,20 +7,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 
+import com.gagecottom.nationbuilder.improvements.CanBuild;
 import com.gagecottom.nationbuilder.model.User;
 import com.gagecottom.nationbuilder.nation.Nation;
 import com.gagecottom.nationbuilder.service.NationService;
 import com.gagecottom.nationbuilder.service.UserService;
-
 @Controller
-public class BuildLibraryController {
+public class BuildWorkshopController {
 	@Autowired
 	private UserService userService;
 	@Autowired
 	private NationService nationService;
-	@GetMapping("/buildLibrary")
+	@GetMapping("/buildWorkshop")
 	public String editResources(Model model) {
 		Nation nation = new Nation();
     	String username;
@@ -35,14 +34,14 @@ public class BuildLibraryController {
     	nation =nationService.findNationById(user.getId());
     	model.addAttribute("nation", nation);
     	CanBuild canBuild = new CanBuild();
-    	if(nation.getMoney()>=500&&nation.getProduction()>=50&&nation.getTechnology()>=25&&nation.isHasLibrary()==false) {
+    	if(nation.getMoney()>=500&&nation.getProduction()>=50&&nation.getTechnology()>=25&&nation.isHasWorkshop()==false) {
     		canBuild.setCanBuild(true);
     	}
     	model.addAttribute("canBuild", canBuild);
-    	return "buildLibrary";
+    	return "buildWorkshop";
 	}
 	
-	@GetMapping ("/buildLibrary-gc23")
+	@GetMapping ("/buildWorkshop-gc23")
 	public String editResources(@ModelAttribute("nation") Nation nNation) {
 		Nation nation = new Nation();
     	String username;
@@ -55,7 +54,7 @@ public class BuildLibraryController {
     	
     	User user=userService.findByUsername(username);
     	nation =nationService.findNationById(user.getId());
-		nation.setHasLibrary(true);
+		nation.setHasWorkshop(true);
 		nation.setProduction(nation.getProduction()-50);
 		nation.setMoney(nation.getMoney()-500);
 		nation.setTechnology(nation.getTechnology()-25);

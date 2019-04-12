@@ -1,4 +1,4 @@
-package com.gagecottom.nationbuilder.improvements;
+package com.gagecottom.nationbuilder.improvements.level1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -7,18 +7,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import com.gagecottom.nationbuilder.improvements.CanBuild;
 import com.gagecottom.nationbuilder.model.User;
 import com.gagecottom.nationbuilder.nation.Nation;
 import com.gagecottom.nationbuilder.service.NationService;
 import com.gagecottom.nationbuilder.service.UserService;
+
 @Controller
-public class BuildBasicFarmController {
+public class BuildLibraryController {
 	@Autowired
 	private UserService userService;
 	@Autowired
 	private NationService nationService;
-	@GetMapping("/buildBasicFarm")
+	@GetMapping("/buildLibrary")
 	public String editResources(Model model) {
 		Nation nation = new Nation();
     	String username;
@@ -33,14 +36,14 @@ public class BuildBasicFarmController {
     	nation =nationService.findNationById(user.getId());
     	model.addAttribute("nation", nation);
     	CanBuild canBuild = new CanBuild();
-    	if(nation.getMoney()>=500&&nation.getProduction()>=50&&nation.getTechnology()>=25&&nation.isHasBasicFarm()==false) {
+    	if(nation.getMoney()>=500&&nation.getProduction()>=50&&nation.getTechnology()>=25&&nation.isHasLibrary()==false) {
     		canBuild.setCanBuild(true);
     	}
     	model.addAttribute("canBuild", canBuild);
-    	return "buildBasicFarm";
+    	return "buildLibrary";
 	}
 	
-	@GetMapping ("/buildBasicFarm-gc23")
+	@GetMapping ("/buildLibrary-gc23")
 	public String editResources(@ModelAttribute("nation") Nation nNation) {
 		Nation nation = new Nation();
     	String username;
@@ -53,7 +56,7 @@ public class BuildBasicFarmController {
     	
     	User user=userService.findByUsername(username);
     	nation =nationService.findNationById(user.getId());
-		nation.setHasBasicFarm(true);
+		nation.setHasLibrary(true);
 		nation.setProduction(nation.getProduction()-50);
 		nation.setMoney(nation.getMoney()-500);
 		nation.setTechnology(nation.getTechnology()-25);

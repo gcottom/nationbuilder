@@ -92,6 +92,12 @@ th, td{padding: 15px; text-align: left;}</style>
 <p>Username:${pageContext.request.userPrincipal.name}</p>
 <table>
 <thead>
+<tr><td>Producing<br>Per Turn:</td>
+<td>Population: ${nation.getPopulationTurn()}<br>
+Production: ${nation.getProductionTurn()}<br>
+Technology: ${nation.getTechnologyTurn()}<br>
+Money: ${nation.getMoneyTurn()}</td></tr>
+
 <tr>
 <td>Nation Level:</td>
 <td>${nation.getNationLevel()}</td></tr>
