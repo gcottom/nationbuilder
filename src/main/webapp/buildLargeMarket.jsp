@@ -9,15 +9,15 @@
 </head>
 <body>
 <div>
-<p>In order to upgrade to nation level 5, you must meet the following requirements:<br>
-Technology:${nation.getTechnology()}/10000<br>
-Production: ${nation.getProduction()}/10000<br>
-Money: ${nation.getMoney()}/10000<br>
-Population: ${nation.getPopulation()}/50000</p>
-<p>Nation Level 5 unlocks level 5 improvements and wonders</p>
+<p>In order to build a large market you must meet the following requirements:<br>
+Technology:${nation.getTechnology()}/100<br>
+Production: ${nation.getProduction()}/250<br>
+Money: ${nation.getMoney()}/1000</p>
+<p>Library provides: +5 money</p>
 <c:choose>
 <c:when test ="${canBuild.getCanBuild()}">
-<a href="upgradeToNationLevel5-gc23">Click here to upgrade to nation level 5!</a>
+<form>
+<a href="buildLargeMarket-gc23">Click here to build large market!</a>
 </c:when>
 <c:otherwise>
 <p>Unable to build at this time!</p>

@@ -49,6 +49,14 @@ public Nation findNationById(int id) {
 	Optional<Integer> populationTurn = nation.map(Nation::getPopulationTurn);
 	Optional<Integer> technologyTurn = nation.map(Nation::getTechnologyTurn);
 	Optional<Integer> moneyTurn = nation.map(Nation::getMoneyTurn);
+	Optional<Boolean> forge= nation.map(Nation::isForge);
+	Optional<Boolean> largeMarket = nation.map(Nation::isLargeMarket);
+	Optional<Boolean> plantation = nation.map(Nation::isPlantation);
+	Optional<Boolean> greatLibrary = nation.map(Nation::isGreatLibrary);
+	boolean hasForge = forge.get();
+	boolean hasLargeMarket = largeMarket.get();
+	boolean hasPlantation = plantation.get();
+	boolean hasGreatLibrary = greatLibrary.get();
 	int newProdTurn = productionTurn.get();
 	int newTechTurn = technologyTurn.get();
 	int newPopTurn = populationTurn.get();
@@ -105,6 +113,10 @@ public Nation findNationById(int id) {
 	newNation.setTechnologyTurn(newTechTurn);
 	newNation.setMoneyTurn(newMoneyTurn);
 	newNation.setProductionTurn(newProdTurn);
+	newNation.setForge(hasForge);
+	newNation.setGreatLibrary(hasGreatLibrary);
+	newNation.setLargeMarket(hasLargeMarket);
+	newNation.setPlantation(hasPlantation);
 	return newNation;
 }
 public void deleteNation(Nation nation) {

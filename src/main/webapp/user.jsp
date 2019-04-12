@@ -61,6 +61,35 @@ th, td{padding: 15px; text-align: left;}</style>
 <c:choose>
 <c:when test="${nation.isLevel2()}">
 <a href="upgradeToLevel3">Upgrade to Nation Level 3</a><br>
+<c:choose>
+<c:when test="${nation.isGreatLibrary()}">
+</c:when>
+<c:otherwise>
+
+<a href="buildGreatLibrary">Build Great Library</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isLargeMarket()}">
+</c:when>
+<c:otherwise>
+<a href="buildLargeMarket">Build Large Market</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isPlantation()}">
+</c:when>
+<c:otherwise>
+<a href="buildPlantation">Build Plantation</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isForge()}">
+</c:when>
+<c:otherwise>
+<a href="buildForge">Build Forge</a><br>
+</c:otherwise>
+</c:choose>
 </c:when>
 <c:otherwise>
 </c:otherwise>
@@ -161,6 +190,34 @@ Workshop<br>
 <c:choose>
 <c:when test="${nation.isHasBasicFarm()}">
 Basic Farm<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isGreatLibrary()}">
+Great Library<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isLargeMarket()}">
+Large Market<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isForge()}">
+Forge<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isPlantation()}">
+Plantation<br>
 </c:when>
 <c:otherwise>
 </c:otherwise>

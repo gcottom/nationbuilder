@@ -35,8 +35,36 @@ public class Nation {
 	private int populationTurn=0;
 	private int technologyTurn=0;
 	private int moneyTurn=0;
+	private boolean forge=false;
+	private boolean plantation= false;
+	private boolean greatLibrary = false;
+	private boolean largeMarket = false;
 	
 	
+	public boolean isForge() {
+		return forge;
+	}
+	public void setForge(boolean forge) {
+		this.forge = forge;
+	}
+	public boolean isPlantation() {
+		return plantation;
+	}
+	public void setPlantation(boolean plantation) {
+		this.plantation = plantation;
+	}
+	public boolean isGreatLibrary() {
+		return greatLibrary;
+	}
+	public void setGreatLibrary(boolean greatLibrary) {
+		this.greatLibrary = greatLibrary;
+	}
+	public boolean isLargeMarket() {
+		return largeMarket;
+	}
+	public void setLargeMarket(boolean largeMarket) {
+		this.largeMarket = largeMarket;
+	}
 	public int getProductionTurn() {
 		return productionTurn;
 	}

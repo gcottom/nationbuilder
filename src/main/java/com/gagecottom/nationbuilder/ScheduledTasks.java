@@ -1,7 +1,7 @@
 package com.gagecottom.nationbuilder;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -10,18 +10,13 @@ import com.gagecottom.nationbuilder.nation.Nation;
 import com.gagecottom.nationbuilder.service.NationService;
 import com.gagecottom.nationbuilder.simulation.ResourceSet;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @Component
 public class ScheduledTasks {
 	@Autowired
 	NationService nationService = new NationService();
-    private static final Logger logger = LoggerFactory.getLogger(ScheduledTasks.class);
-    private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     @Scheduled(fixedRate =200)
     public void Simulate() {
     	List<Nation> nations = new ArrayList<Nation>();
@@ -72,6 +67,19 @@ public class ScheduledTasks {
 			}
 			if(currentNation.isHasWorkshop()) {
 				resources.setProduction(resources.getProduction()+3);
+			}
+			//improvement yields level 2
+			if(currentNation.isGreatLibrary()) {
+				resources.setTechnology(resources.getTechnology()+5);
+			}
+			if(currentNation.isLargeMarket()) {
+				resources.setMoney(resources.getMoney()+5);
+			}
+			if(currentNation.isPlantation()) {
+				resources.setPopulation(resources.getPopulation()+5);
+			}
+			if(currentNation.isForge()) {
+				resources.setProduction(resources.getProduction()+5);
 			}
 			//resource yields
 			if(currentNation.getResource1().equals("Gold")) {
