@@ -23,8 +23,29 @@ public class Nation {
 	private boolean hasMarket = false;
 	private boolean hasWorkshop = false;
 	private boolean hasBasicFarm = false;
+	private int nationLevel = 1;
+	private boolean level1 =true;
+	private boolean level2 =false;
 	
 	
+	public boolean isLevel1() {
+		return level1;
+	}
+	public void setLevel1(boolean level1) {
+		this.level1 = level1;
+	}
+	public boolean isLevel2() {
+		return level2;
+	}
+	public void setLevel2(boolean level2) {
+		this.level2 = level2;
+	}
+	public int getNationLevel() {
+		return nationLevel;
+	}
+	public void setNationLevel(int nationLevel) {
+		this.nationLevel = nationLevel;
+	}
 	public boolean isHasWorkshop() {
 		return hasWorkshop;
 	}

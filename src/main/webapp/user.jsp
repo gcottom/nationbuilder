@@ -51,12 +51,23 @@ th, td{padding: 15px; text-align: left;}</style>
 <a href="buildWorkshop">Build Workshop</a><br>
 </c:otherwise>
 </c:choose>
+<c:choose>
+<c:when test="${nation.isLevel1()}">
+<a href="upgradeToLevel2">Upgrade to Nation Level 2</a><br>
+</c:when>
+<c:otherwise>
+
+</c:otherwise>
+</c:choose>
 </div>
 <div class="container" style="float: left; width:50%;">
 <h1>My Information</h1>
 <p>Username:${pageContext.request.userPrincipal.name}</p>
 <table>
 <thead>
+<tr>
+<td>Nation Level:</td>
+<td>${nation.getNationLevel()}</td></tr>
 <tr>
 <td><p>Money:</p></td>
 <td><p>${nation.getMoney()}</p></td>
