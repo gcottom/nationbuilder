@@ -26,8 +26,42 @@ public class Nation {
 	private int nationLevel = 1;
 	private boolean level1 =true;
 	private boolean level2 =false;
+	private boolean level3 = false;
+	private boolean level4 = false;
+	private boolean level5 =false;
+	private boolean level6 = false;
+	private boolean level7 = false;
 	
-	
+	public boolean isLevel3() {
+		return level3;
+	}
+	public void setLevel3(boolean level3) {
+		this.level3 = level3;
+	}
+	public boolean isLevel4() {
+		return level4;
+	}
+	public void setLevel4(boolean level4) {
+		this.level4 = level4;
+	}
+	public boolean isLevel5() {
+		return level5;
+	}
+	public void setLevel5(boolean level5) {
+		this.level5 = level5;
+	}
+	public boolean isLevel6() {
+		return level6;
+	}
+	public void setLevel6(boolean level6) {
+		this.level6 = level6;
+	}
+	public boolean isLevel7() {
+		return level7;
+	}
+	public void setLevel7(boolean level7) {
+		this.level7 = level7;
+	}
 	public boolean isLevel1() {
 		return level1;
 	}

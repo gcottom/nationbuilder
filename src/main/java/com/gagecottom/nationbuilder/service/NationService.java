@@ -41,8 +41,16 @@ public Nation findNationById(int id) {
 	Optional<Integer> nationLevel = nation.map(Nation::getNationLevel);
 	Optional<Boolean> level1 = nation.map(Nation::isLevel1);
 	Optional<Boolean> level2 = nation.map(Nation::isLevel2);
+	Optional<Boolean> level3 = nation.map(Nation::isLevel3);
+	Optional<Boolean> level4 = nation.map(Nation::isLevel4);
+	Optional<Boolean> level5 = nation.map(Nation::isLevel5);
+	Optional<Boolean> level6 = nation.map(Nation::isLevel6);
 	boolean newLevel1 = level1.get();
 	boolean newLevel2 = level2.get();
+	boolean newLevel3 = level3.get();
+	boolean newLevel4 = level4.get();
+	boolean newLevel5 = level5.get();
+	boolean newLevel6 = level6.get();
 	int newNationLevel = nationLevel.get();
 	boolean newHasBasicFarm = hasBasicFarm.get();
 	boolean newHasWorkshop = hasWorkshop.get();
@@ -81,6 +89,10 @@ public Nation findNationById(int id) {
 	newNation.setNationLevel(newNationLevel);
 	newNation.setLevel1(newLevel1);
 	newNation.setLevel2(newLevel2);
+	newNation.setLevel3(newLevel3);
+	newNation.setLevel4(newLevel4);
+	newNation.setLevel5(newLevel5);
+	newNation.setLevel6(newLevel6);
 	return newNation;
 }
 public void deleteNation(Nation nation) {

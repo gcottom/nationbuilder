@@ -57,8 +57,8 @@ public class UserController {
         nation.setResource2("Wheat");
         nation.setResource3("Cotton");
         nation.setResource4("Wood");
-        nation.setPopulation(100);
         nation.setPopulationLimit(1000);
+        nation.setPopulation(100);
         nation.setProduction(25);
         nation.setHasLibrary(false);
         nation.setHasMarket(false);

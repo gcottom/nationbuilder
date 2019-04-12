@@ -56,7 +56,34 @@ th, td{padding: 15px; text-align: left;}</style>
 <a href="upgradeToLevel2">Upgrade to Nation Level 2</a><br>
 </c:when>
 <c:otherwise>
-
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isLevel2()}">
+<a href="upgradeToLevel3">Upgrade to Nation Level 3</a><br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isLevel3()}">
+<a href="upgradeToLevel4">Upgrade to Nation Level 4</a><br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isLevel4()}">
+<a href="upgradeToLevel5">Upgrade to Nation Level 5</a><br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isLevel5()}">
+<a href="upgradeToLevel6">Upgrade to Nation Level 6</a><br>
+</c:when>
+<c:otherwise>
 </c:otherwise>
 </c:choose>
 </div>
