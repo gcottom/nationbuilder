@@ -1,5 +1,7 @@
 package com.gagecottom.nationbuilder.nation;
 
+import java.net.URL;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,6 +9,8 @@ import javax.persistence.Id;
 public class Nation {
 	@Id
 	private int id;
+	private String rulerName;
+	private URL link;
 	private String nationName;
 	private String nationCapitol;
 	private String government;
@@ -41,6 +45,18 @@ public class Nation {
 	private boolean largeMarket = false;
 	
 	
+	public String getRulerName() {
+		return rulerName;
+	}
+	public void setRulerName(String rulerName) {
+		this.rulerName = rulerName;
+	}
+	public URL getLink() {
+		return link;
+	}
+	public void setLink(URL link) {
+		this.link = link;
+	}
 	public boolean isForge() {
 		return forge;
 	}

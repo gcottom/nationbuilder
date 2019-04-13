@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.print.DocFlavor.URL;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -53,6 +55,10 @@ public Nation findNationById(int id) {
 	Optional<Boolean> largeMarket = nation.map(Nation::isLargeMarket);
 	Optional<Boolean> plantation = nation.map(Nation::isPlantation);
 	Optional<Boolean> greatLibrary = nation.map(Nation::isGreatLibrary);
+	Optional<String> rulerName = nation.map(Nation::getRulerName);
+	Optional<java.net.URL> link = nation.map(Nation::getLink);
+	String newRulerName= rulerName.get();
+	java.net.URL newLink = link.get();
 	boolean hasForge = forge.get();
 	boolean hasLargeMarket = largeMarket.get();
 	boolean hasPlantation = plantation.get();
@@ -85,6 +91,8 @@ public Nation findNationById(int id) {
 	String newResource2 = resource2.get();
 	String newResource3 = resource3.get();
 	String newResource4 = resource4.get();
+	newNation.setRulerName(newRulerName);
+	newNation.setLink(newLink);
 	newNation.setPopulationLimit(newPopulationLimit);
 	newNation.setProduction(newProduction);
 	newNation.setId(NewNationId);

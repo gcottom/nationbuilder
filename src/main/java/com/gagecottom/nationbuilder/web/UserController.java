@@ -1,5 +1,7 @@
 package com.gagecottom.nationbuilder.web;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,9 +68,22 @@ public class UserController {
         nation.setHasWorkshop(false);
         nation.setNationLevel(1);
         nation.setLevel1(true);
-        nationService.createNation(nation);
-        securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
+        String protocol = "http";
+        String host = "localhost";
+        int port = 8080;
+        String path = "/nation/" +userForm.getId();
+        try {
+			URL url = new URL (protocol, host, port, path);
+			nation.setLink(url);
+			nation.setRulerName(userForm.getUsername());
+			nationService.createNation(nation);
+	        securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
 
+        } catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
         return "redirect:/welcome";
     }
 
