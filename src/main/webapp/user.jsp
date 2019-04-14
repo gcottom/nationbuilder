@@ -16,12 +16,20 @@ th, td{padding: 15px; text-align: left;}</style>
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div style="float: right; width:50%;" class="container"><a href="editNationName">Edit Nation Name</a><br>
+<div style="float: right; width:50%;" class="container">
+<h3>Customize your nation</h3>
+<a href="editNationName">Edit Nation Name</a><br>
 <a href="editNationCapitol">Edit Nation Capitol</a><br>
 <a href="editResources">Edit Resources</a><br>
 <a href="editGovernment">Edit Government</a><br><br>
-<br>
+<h3>Build Housing</h3>
 <a href="buyHousing">Buy Housing</a><br>
+
+<h3>Upgrade Nation</h3>
+<c:choose>
+<c:when test="${nation.isLevel1()}">
+<a href="upgradeToLevel2">Upgrade to Nation Level 2</a><br>
+<h3>Build Improvements</h3>
 <c:choose>
 <c:when test="${nation.isHasLibrary()}">
 </c:when>
@@ -50,17 +58,14 @@ th, td{padding: 15px; text-align: left;}</style>
 <c:otherwise>
 <a href="buildWorkshop">Build Workshop</a><br>
 </c:otherwise>
-</c:choose>
-<c:choose>
-<c:when test="${nation.isLevel1()}">
-<a href="upgradeToLevel2">Upgrade to Nation Level 2</a><br>
-</c:when>
+</c:choose></c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isLevel2()}">
 <a href="upgradeToLevel3">Upgrade to Nation Level 3</a><br>
+<h3>Build Improvements</h3>
 <c:choose>
 <c:when test="${nation.isGreatLibrary()}">
 </c:when>
@@ -97,6 +102,36 @@ th, td{padding: 15px; text-align: left;}</style>
 <c:choose>
 <c:when test="${nation.isLevel3()}">
 <a href="upgradeToLevel4">Upgrade to Nation Level 4</a><br>
+<h3>Build Improvements</h3>
+<c:choose>
+<c:when test="${nation.isCollege()}">
+</c:when>
+<c:otherwise>
+
+<a href="buildCollege">Build College</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isBank()}">
+</c:when>
+<c:otherwise>
+<a href="buildBank">Build Bank</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isCropRotation()}">
+</c:when>
+<c:otherwise>
+<a href="buildCropRotation">Build Crop Rotation</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAdvancedWorkshop()}">
+</c:when>
+<c:otherwise>
+<a href="buildAdvancedWorkshop">Build Advanced Workshop</a><br>
+</c:otherwise>
+</c:choose>
 </c:when>
 <c:otherwise>
 </c:otherwise>
@@ -104,6 +139,36 @@ th, td{padding: 15px; text-align: left;}</style>
 <c:choose>
 <c:when test="${nation.isLevel4()}">
 <a href="upgradeToLevel5">Upgrade to Nation Level 5</a><br>
+<h3>Build Improvements</h3>
+<c:choose>
+<c:when test="${nation.isResearchLab()}">
+</c:when>
+<c:otherwise>
+
+<a href="buildResearchLab">Build Research Lab</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isHarbor()}">
+</c:when>
+<c:otherwise>
+<a href="buildHarbor">Build Harbor</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAdvancedFarming()}">
+</c:when>
+<c:otherwise>
+<a href="buildAdvancedFarming">Build Advanced Farming</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAdvancedForge()}">
+</c:when>
+<c:otherwise>
+<a href="buildAdvancedForge">Build Advanced Forge</a><br>
+</c:otherwise>
+</c:choose>
 </c:when>
 <c:otherwise>
 </c:otherwise>

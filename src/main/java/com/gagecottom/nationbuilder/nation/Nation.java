@@ -43,8 +43,64 @@ public class Nation {
 	private boolean plantation= false;
 	private boolean greatLibrary = false;
 	private boolean largeMarket = false;
+	private boolean bank= false;
+	private boolean college = false;
+	private boolean cropRotation = false;
+	private boolean advancedWorkshop = false;
+	private boolean researchLab = false;
+	private boolean harbor = false;
+	private boolean advancedFarming=false;
+	private boolean advancedForge = false;
 	
 	
+	public boolean isBank() {
+		return bank;
+	}
+	public void setBank(boolean bank) {
+		this.bank = bank;
+	}
+	public boolean isCollege() {
+		return college;
+	}
+	public void setCollege(boolean college) {
+		this.college = college;
+	}
+	public boolean isCropRotation() {
+		return cropRotation;
+	}
+	public void setCropRotation(boolean cropRotation) {
+		this.cropRotation = cropRotation;
+	}
+	public boolean isAdvancedWorkshop() {
+		return advancedWorkshop;
+	}
+	public void setAdvancedWorkshop(boolean advancedWorkshop) {
+		this.advancedWorkshop = advancedWorkshop;
+	}
+	public boolean isResearchLab() {
+		return researchLab;
+	}
+	public void setResearchLab(boolean researchLab) {
+		this.researchLab = researchLab;
+	}
+	public boolean isHarbor() {
+		return harbor;
+	}
+	public void setHarbor(boolean harbor) {
+		this.harbor = harbor;
+	}
+	public boolean isAdvancedFarming() {
+		return advancedFarming;
+	}
+	public void setAdvancedFarming(boolean advancedFarming) {
+		this.advancedFarming = advancedFarming;
+	}
+	public boolean isAdvancedForge() {
+		return advancedForge;
+	}
+	public void setAdvancedForge(boolean advancedForge) {
+		this.advancedForge = advancedForge;
+	}
 	public String getRulerName() {
 		return rulerName;
 	}
