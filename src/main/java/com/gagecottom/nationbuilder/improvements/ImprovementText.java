@@ -1,4 +1,4 @@
-package com.gagecottom.nationbuilder.improvements.level3;
+package com.gagecottom.nationbuilder.improvements;
 
 public class ImprovementText {
 	private String text;

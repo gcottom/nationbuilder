@@ -94,6 +94,19 @@ public class ScheduledTasks {
 			if(currentNation.isAdvancedWorkshop()) {
 				resources.setProduction(resources.getProduction()+5);
 			}
+			//improvement yields level 4
+			if(currentNation.isResearchLab()) {
+				resources.setTechnology(resources.getTechnology()+7);
+			}
+			if(currentNation.isHarbor()) {
+				resources.setMoney(resources.getMoney()+7);
+			}
+			if(currentNation.isAdvancedFarming()) {
+				resources.setPopulation(resources.getPopulation()+7);
+			}
+			if(currentNation.isAdvancedForge()) {
+				resources.setProduction(resources.getProduction()+7);
+			}
 			//resource yields
 			if(currentNation.getResource1().equals("Gold")) {
 				resources.setMoney(resources.getMoney()+5);
