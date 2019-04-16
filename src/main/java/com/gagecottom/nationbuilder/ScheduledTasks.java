@@ -81,6 +81,19 @@ public class ScheduledTasks {
 			if(currentNation.isForge()) {
 				resources.setProduction(resources.getProduction()+5);
 			}
+			//improvement yields level 3
+			if(currentNation.isCollege()) {
+				resources.setTechnology(resources.getTechnology()+5);
+			}
+			if(currentNation.isBank()) {
+				resources.setMoney(resources.getMoney()+5);
+			}
+			if(currentNation.isCropRotation()) {
+				resources.setPopulation(resources.getPopulation()+5);
+			}
+			if(currentNation.isAdvancedWorkshop()) {
+				resources.setProduction(resources.getProduction()+5);
+			}
 			//resource yields
 			if(currentNation.getResource1().equals("Gold")) {
 				resources.setMoney(resources.getMoney()+5);

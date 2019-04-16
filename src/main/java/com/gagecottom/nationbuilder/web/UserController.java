@@ -2,7 +2,7 @@ package com.gagecottom.nationbuilder.web;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.security.Principal;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;

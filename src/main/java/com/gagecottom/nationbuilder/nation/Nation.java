@@ -51,8 +51,92 @@ public class Nation {
 	private boolean harbor = false;
 	private boolean advancedFarming=false;
 	private boolean advancedForge = false;
+	private boolean factory = false;
+	private boolean advancedPlantation = false;
+	private boolean university = false;
+	private boolean stockExchange = false;
+	private boolean industryArea = false;
+	private boolean agricultureArea = false;
+	private boolean campusArea = false;
+	private boolean commercialArea =false;
+	private boolean warehouse = false;
+	private boolean corporateFarming = false;
+	private boolean governmentGrants =false;
+	private boolean federalReserve = false;
 	
 	
+	public boolean isFactory() {
+		return factory;
+	}
+	public void setFactory(boolean factory) {
+		this.factory = factory;
+	}
+	public boolean isAdvancedPlantation() {
+		return advancedPlantation;
+	}
+	public void setAdvancedPlantation(boolean advancedPlantation) {
+		this.advancedPlantation = advancedPlantation;
+	}
+	public boolean isUniversity() {
+		return university;
+	}
+	public void setUniversity(boolean university) {
+		this.university = university;
+	}
+	public boolean isStockExchange() {
+		return stockExchange;
+	}
+	public void setStockExchange(boolean stockExchange) {
+		this.stockExchange = stockExchange;
+	}
+	public boolean isIndustryArea() {
+		return industryArea;
+	}
+	public void setIndustryArea(boolean industryArea) {
+		this.industryArea = industryArea;
+	}
+	public boolean isAgricultureArea() {
+		return agricultureArea;
+	}
+	public void setAgricultureArea(boolean agricultureArea) {
+		this.agricultureArea = agricultureArea;
+	}
+	public boolean isCampusArea() {
+		return campusArea;
+	}
+	public void setCampusArea(boolean campusArea) {
+		this.campusArea = campusArea;
+	}
+	public boolean isCommercialArea() {
+		return commercialArea;
+	}
+	public void setCommercialArea(boolean commercialArea) {
+		this.commercialArea = commercialArea;
+	}
+	public boolean isWarehouse() {
+		return warehouse;
+	}
+	public void setWarehouse(boolean warehouse) {
+		this.warehouse = warehouse;
+	}
+	public boolean isCorporateFarming() {
+		return corporateFarming;
+	}
+	public void setCorporateFarming(boolean corporateFarming) {
+		this.corporateFarming = corporateFarming;
+	}
+	public boolean isGovernmentGrants() {
+		return governmentGrants;
+	}
+	public void setGovernmentGrants(boolean governmentGrants) {
+		this.governmentGrants = governmentGrants;
+	}
+	public boolean isFederalReserve() {
+		return federalReserve;
+	}
+	public void setFederalReserve(boolean federalReserve) {
+		this.federalReserve = federalReserve;
+	}
 	public boolean isBank() {
 		return bank;
 	}

@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.ui.Model;
 
 import com.gagecottom.nationbuilder.service.NationService;
@@ -18,7 +17,6 @@ public class ViewAllNationsController {
 	@GetMapping("/nation/viewAll")
 	public String showNation( Model model) {
 		List<Nation> nations = new ArrayList<Nation>();
-		Nation currentNation = new Nation();
 		nationService.listAllNations().forEach(nations::add);
 		model.addAttribute("nations", nations);
 		return "viewAllNations";

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import javax.print.DocFlavor.URL;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,8 +56,48 @@ public Nation findNationById(int id) {
 	Optional<Boolean> greatLibrary = nation.map(Nation::isGreatLibrary);
 	Optional<String> rulerName = nation.map(Nation::getRulerName);
 	Optional<java.net.URL> link = nation.map(Nation::getLink);
+	Optional<Boolean> adWorkshop = nation.map(Nation::isAdvancedWorkshop);
+	Optional<Boolean> cropRotation = nation.map(Nation::isCropRotation);
+	Optional<Boolean> college = nation.map(Nation::isCollege);
+	Optional<Boolean> bank = nation.map(Nation::isBank);
+	Optional<Boolean> adForge = nation.map(Nation::isAdvancedForge);
+	Optional<Boolean> adFarming = nation.map(Nation::isAdvancedFarming);
+	Optional<Boolean> researchLab = nation.map(Nation::isResearchLab);
+	Optional<Boolean> harbor = nation.map(Nation::isHarbor);
+	Optional<Boolean> factory = nation.map(Nation::isFactory);
+	Optional<Boolean> adPlantation = nation.map(Nation::isAdvancedPlantation);
+	Optional<Boolean> university = nation.map(Nation::isUniversity);
+	Optional<Boolean> stockExchange = nation.map(Nation::isStockExchange);
+	Optional<Boolean> indArea = nation.map(Nation::isIndustryArea);
+	Optional<Boolean> agArea = nation.map(Nation::isAgricultureArea);
+	Optional<Boolean> campArea = nation.map(Nation::isCampusArea);
+	Optional<Boolean> comArea = nation.map(Nation::isCommercialArea);
+	Optional<Boolean> warehouse = nation.map(Nation::isWarehouse);
+	Optional<Boolean> corporateFarming = nation.map(Nation::isCorporateFarming);
+	Optional<Boolean> governmentGrants = nation.map(Nation::isGovernmentGrants);
+	Optional<Boolean> federalReserve = nation.map(Nation::isFederalReserve);
 	String newRulerName= rulerName.get();
 	java.net.URL newLink = link.get();
+	boolean advancedWorkshop = adWorkshop.get();
+	boolean newCropRotation = cropRotation.get();
+	boolean newCollege = college.get();
+	boolean newBank = bank.get();
+	boolean advancedForge = adForge.get();
+	boolean advancedFarming = adFarming.get();
+	boolean newResearchLab = researchLab.get();
+	boolean newHarbor = harbor.get();
+	boolean newFactory = factory.get();
+	boolean advancedPlantation = adPlantation.get();
+	boolean newUniversity = university.get();
+	boolean newStockExchange = stockExchange.get();
+	boolean industrialArea = indArea.get();
+	boolean agricultureArea = agArea.get();
+	boolean campusArea = campArea.get();
+	boolean commercialArea = comArea.get();
+	boolean newWarehouse = warehouse.get();
+	boolean newCorporateFarming = corporateFarming.get();
+	boolean newGovernmentGrants = governmentGrants.get();
+	boolean newFederalReserve= federalReserve.get();
 	boolean hasForge = forge.get();
 	boolean hasLargeMarket = largeMarket.get();
 	boolean hasPlantation = plantation.get();
@@ -125,6 +164,28 @@ public Nation findNationById(int id) {
 	newNation.setGreatLibrary(hasGreatLibrary);
 	newNation.setLargeMarket(hasLargeMarket);
 	newNation.setPlantation(hasPlantation);
+	newNation.setAdvancedWorkshop(advancedWorkshop);
+	newNation.setCropRotation(newCropRotation);
+	newNation.setCollege(newCollege);
+	newNation.setBank(newBank);
+	newNation.setAdvancedForge(advancedForge);
+	newNation.setAdvancedFarming(advancedFarming);
+	newNation.setResearchLab(newResearchLab);
+	newNation.setHarbor(newHarbor);
+	newNation.setFactory(newFactory);
+	newNation.setAdvancedPlantation(advancedPlantation);
+	newNation.setUniversity(newUniversity);
+	newNation.setStockExchange(newStockExchange);
+	newNation.setIndustryArea(industrialArea);
+	newNation.setAgricultureArea(agricultureArea);
+	newNation.setCampusArea(campusArea);
+	newNation.setCommercialArea(commercialArea);
+	newNation.setWarehouse(newWarehouse);
+	newNation.setCorporateFarming(newCorporateFarming);
+	newNation.setGovernmentGrants(newGovernmentGrants);
+	newNation.setFederalReserve(newFederalReserve);
+	
+	
 	return newNation;
 }
 public void deleteNation(Nation nation) {
