@@ -301,6 +301,34 @@ Plantation<br>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
+<c:choose>
+<c:when test="${nation.isAdvancedWorkshop()}">
+Advanced Workshop<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isCropRotation()}">
+Crop Rotation<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isCollege()}">
+College<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isBank()}">
+Bank<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
 </p>
 
 
