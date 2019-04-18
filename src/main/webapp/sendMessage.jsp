@@ -21,9 +21,8 @@
         <h2 class="form-heading">Send Message</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
-            <span>${message}</span>
-            <input name="message" type="text" class="form-control" placeholder="Message"
-                   autofocus="true"/>
+            <input name="note" type="text" class="form-control" placeholder="Message"
+                   />
         
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 

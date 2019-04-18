@@ -17,7 +17,7 @@ import java.util.List;
 public class ScheduledTasks {
 	@Autowired
 	NationService nationService = new NationService();
-    @Scheduled(fixedRate =200)
+    @Scheduled(fixedRate =15000)
     public void Simulate() {
     	List<Nation> nations = new ArrayList<Nation>();
 		Nation currentNation= new Nation();

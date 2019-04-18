@@ -20,18 +20,16 @@
 <thead>
 <tr>
 <th>ID</th>
-<th>Nation Name</th>
-<th>Nation Ruler</th>
-<th>Link</th>
+<th>Nation From ID</th>
+<th>Message</th>
 </tr>
 </thead>
 <tbody>
-<c:forEach var="nation" items="${nations}" >
+<c:forEach var="message" items="${messages}" >
 <tr>
-<td><c:out value="${nation.getId()}"/></td>
-<td><c:out value="${nation.getNationName()}"/></td>
-<td><c:out value="${nation.getRulerName()}"/></td>
-<td><a href="<c:out value="${nation.getLink()}"/>">Link</a></td>
+<td><c:out value="${message.getId()}"/></td>
+<td><c:out value="${message.getSenderId()}"/></td>
+<td><c:out value="${message.getMessage()}"/></td>
 </tr>
 </c:forEach>
 </tbody></table>

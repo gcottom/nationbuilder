@@ -22,13 +22,17 @@ public class SendMessageController {
 	private MessageService messageService;
 @GetMapping("/nation/{id}/sendMessage")
 public String sendMessage(@PathVariable("id") int id, Model model) {
-	model.addAttribute("message", new Message());
+	model.addAttribute("note", new String());
 	
 	return "sendMessage";
 }
 @PostMapping("/nation/{id}/sendMessage")
-public String sendMessageSubmit(@PathVariable("id") int id, @ModelAttribute("message") Message message) {
-	message.setReceiverId(id);
+public String sendMessageSubmit(@PathVariable("id") int id, @ModelAttribute("note") String message) {
+	Message newMessage = new Message();
+	System.out.print(message+ "message");
+	
+	newMessage.setMessage(message);
+	newMessage.setReceiverId(id);
 	String username;
 	Object principal =SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 	if (principal instanceof UserDetails) {
@@ -38,8 +42,8 @@ public String sendMessageSubmit(@PathVariable("id") int id, @ModelAttribute("mes
 		}
 	
 	User user=userService.findByUsername(username);
-	message.setSenderId(user.getId());
-	messageService.saveMessage(message);
+	newMessage.setSenderId(user.getId());
+	messageService.saveMessage(newMessage);
 	return "redirect:/user";
 }
 }

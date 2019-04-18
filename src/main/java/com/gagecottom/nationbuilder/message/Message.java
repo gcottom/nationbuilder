@@ -12,7 +12,7 @@ public class Message {
 private int id;
 private int receiverId;
 private int senderId;
-private String message;
+private String note;
 public Message() {
 	
 }
@@ -36,10 +36,10 @@ public void setSenderId(int senderId) {
 	this.senderId = senderId;
 }
 public String getMessage() {
-	return message;
+	return note;
 }
 public void setMessage(String message) {
-	this.message = message;
+	this.note = message;
 }
 
 }
