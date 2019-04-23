@@ -63,8 +63,21 @@ public class Nation {
 	private boolean corporateFarming = false;
 	private boolean governmentGrants =false;
 	private boolean federalReserve = false;
+	private boolean atWar= false;
+	private int atWarWith = 0;
 	
-	
+	public boolean isAtWar() {
+		return atWar;
+	}
+	public void setAtWar(boolean atWar) {
+		this.atWar = atWar;
+	}
+	public int getAtWarWith() {
+		return atWarWith;
+	}
+	public void setAtWarWith(int atWarWith) {
+		this.atWarWith = atWarWith;
+	}
 	public boolean isFactory() {
 		return factory;
 	}

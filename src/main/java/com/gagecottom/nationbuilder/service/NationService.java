@@ -76,6 +76,10 @@ public Nation findNationById(int id) {
 	Optional<Boolean> corporateFarming = nation.map(Nation::isCorporateFarming);
 	Optional<Boolean> governmentGrants = nation.map(Nation::isGovernmentGrants);
 	Optional<Boolean> federalReserve = nation.map(Nation::isFederalReserve);
+	Optional<Boolean> atWar = nation.map(Nation::isAtWar);
+	Optional<Integer> atWarWith = nation.map(Nation::getAtWarWith);
+	boolean isAtWar = atWar.get();
+	int isAtWarWith = atWarWith.get();
 	String newRulerName= rulerName.get();
 	java.net.URL newLink = link.get();
 	boolean advancedWorkshop = adWorkshop.get();
@@ -130,6 +134,8 @@ public Nation findNationById(int id) {
 	String newResource2 = resource2.get();
 	String newResource3 = resource3.get();
 	String newResource4 = resource4.get();
+	newNation.setAtWar(isAtWar);
+	newNation.setAtWarWith(isAtWarWith);
 	newNation.setRulerName(newRulerName);
 	newNation.setLink(newLink);
 	newNation.setPopulationLimit(newPopulationLimit);

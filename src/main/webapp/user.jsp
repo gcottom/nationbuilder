@@ -244,6 +244,15 @@ Money: ${nation.getMoneyTurn()}</td></tr>
 <p>${nation.getResource4()}</p></td>
 </tr>
 <tr>
+<td><p>At War:</p></td>
+<td><p>${nation.isAtWar()}</p></td></tr>
+<c:if test="${nation.isAtWar()}">
+<tr><td>At War<br> Against:</td>
+<td><a href="nation/${ nation.getAtWarWith()}">Nation</a>
+</td>
+</tr>
+</c:if>
+<tr>
 <td><p>Improvements</p></td>
 <td><p><c:choose>
 <c:when test="${nation.isHasLibrary()}">
@@ -330,7 +339,7 @@ Bank<br>
 </c:otherwise>
 </c:choose>
 </p>
-
+</td></tr>
 
 
 

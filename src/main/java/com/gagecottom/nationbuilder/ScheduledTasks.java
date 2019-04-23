@@ -8,16 +8,21 @@ import org.springframework.stereotype.Component;
 
 import com.gagecottom.nationbuilder.nation.Nation;
 import com.gagecottom.nationbuilder.service.NationService;
+import com.gagecottom.nationbuilder.service.WarService;
 import com.gagecottom.nationbuilder.simulation.ResourceSet;
+import com.gagecottom.nationbuilder.war.WarDeclaration;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class ScheduledTasks {
+	public static int turn =0;
 	@Autowired
-	NationService nationService = new NationService();
-    @Scheduled(fixedRate =15000)
+	WarService warService;
+	@Autowired
+	NationService nationService;
+    @Scheduled(fixedRate =500)
     public void Simulate() {
     	List<Nation> nations = new ArrayList<Nation>();
 		Nation currentNation= new Nation();
@@ -246,8 +251,22 @@ public class ScheduledTasks {
 			currentNation.setMoneyTurn(resources.getMoney()+1);
 			currentNation.setTechnologyTurn(resources.getTechnology()+1);
 			nationService.createNation(currentNation);
-		}
-		
+			if(warService.getWarByNationId(currentNation.getId()).getEndTurn()==turn) {
+				WarDeclaration war = new WarDeclaration();
+				war =warService.getWarByNationId(currentNation.getId());
+				war.setActive(false);
+				Nation otherNation = new Nation();
+				otherNation = nationService.findNationById(war.getInitiatorId());
+					otherNation.setAtWar(false);
+					otherNation.setAtWarWith(0);
+					nationService.createNation(otherNation);
+					otherNation = nationService.findNationById(war.getTargetId());
+					otherNation.setAtWar(false);
+					otherNation.setAtWarWith(0);
+					nationService.createNation(otherNation);	
+					}
+				}
+		turn++;
     }
     public void scheduleTaskWithFixedRate() {}
 
