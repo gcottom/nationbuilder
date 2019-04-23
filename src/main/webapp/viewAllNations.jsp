@@ -23,6 +23,7 @@
 <th>Nation Name</th>
 <th>Nation Ruler</th>
 <th>Link</th>
+<th>Message</th>
 </tr>
 </thead>
 <tbody>
@@ -32,6 +33,7 @@
 <td><c:out value="${nation.getNationName()}"/></td>
 <td><c:out value="${nation.getRulerName()}"/></td>
 <td><a href="<c:out value="${nation.getLink()}"/>">Link</a></td>
+<td><a href="<c:out value="${nation.getLink()}/sendMessage"/>">Message</a></td>
 </tr>
 </c:forEach>
 </tbody></table>
