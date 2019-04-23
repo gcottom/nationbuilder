@@ -24,12 +24,15 @@ th, td{padding: 15px; text-align: left;}</style>
 <a href="editGovernment">Edit Government</a><br>
 <c:choose>
 <c:when test="${message}">
-<a href="/user/viewMessages" style="color:red">New Message</a>
+<a href="/user/viewMessages" style="color:red">New Message</a><br>
 </c:when>
 <c:otherwise>
-<a href="/user/viewMessages" >View Messages</a>
+<a href="/user/viewMessages" >View Messages</a><br>
 </c:otherwise>
 </c:choose>
+<c:if test="${nation.getNationLevel() gt 2}">
+<a href="/nation/viewAll">View All Nations</a><br>
+</c:if>
 <br>
 <h3>Build Housing</h3>
 <a href="buyHousing">Buy Housing</a><br>
