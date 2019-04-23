@@ -36,21 +36,9 @@ th, td{padding: 15px; text-align: left;}</style>
 <br>
 <h3>Build Housing</h3>
 <a href="buyHousing">Buy Housing</a><br>
-<c:choose>
-<c:when test="${nation.isLevel4()}">
-<a href="buyAdvancedHousing">Buy Advanced Housing</a>
-</c:when>
-</c:choose>
-<c:choose>
-<c:when test="${nation.isLevel5()}">
-<a href="buyAdvancedHousing">Buy Advanced Housing</a>
-</c:when>
-</c:choose>
-<c:choose>
-<c:when test="${nation.isLevel6()}">
-<a href="buyAdvancedHousing">Buy Advanced Housing</a>
-</c:when>
-</c:choose>
+<c:if test="${nation.getNationLevel() gt 3}">
+<a href="buyAdvancedHousing">Buy Advanced Housing</a><br>
+</c:if>
 <h3>Upgrade Nation</h3>
 <c:choose>
 <c:when test="${nation.isLevel1()}">
