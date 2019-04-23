@@ -13,8 +13,17 @@ private int id;
 private int receiverId;
 private int senderId;
 private String note;
+private Boolean newMessage=true;
 public Message() {
 	
+}
+
+public Boolean getNewMessage() {
+	return newMessage;
+}
+
+public void setNewMessage(Boolean newMessage) {
+	this.newMessage = newMessage;
 }
 
 public int getId() {

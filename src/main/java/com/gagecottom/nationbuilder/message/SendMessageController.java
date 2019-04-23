@@ -28,9 +28,7 @@ public String sendMessage(@PathVariable("id") int id, Model model) {
 }
 @PostMapping("/nation/{id}/sendMessage")
 public String sendMessageSubmit(@PathVariable("id") int id, @ModelAttribute("note") String message) {
-	Message newMessage = new Message();
-	System.out.print(message+ "message");
-	
+	Message newMessage = new Message();	
 	newMessage.setMessage(message);
 	newMessage.setReceiverId(id);
 	String username;

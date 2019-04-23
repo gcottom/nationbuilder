@@ -21,7 +21,16 @@ th, td{padding: 15px; text-align: left;}</style>
 <a href="editNationName">Edit Nation Name</a><br>
 <a href="editNationCapitol">Edit Nation Capitol</a><br>
 <a href="editResources">Edit Resources</a><br>
-<a href="editGovernment">Edit Government</a><br><br>
+<a href="editGovernment">Edit Government</a><br>
+<c:choose>
+<c:when test="${message}">
+<a href="/user/viewMessages" style="color:red">New Message</a>
+</c:when>
+<c:otherwise>
+<a href="/user/viewMessages" >View Messages</a>
+</c:otherwise>
+</c:choose>
+<br>
 <h3>Build Housing</h3>
 <a href="buyHousing">Buy Housing</a><br>
 <c:choose>

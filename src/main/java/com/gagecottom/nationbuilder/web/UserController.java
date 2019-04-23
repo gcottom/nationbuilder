@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.gagecottom.nationbuilder.model.User;
 import com.gagecottom.nationbuilder.nation.Nation;
+import com.gagecottom.nationbuilder.service.MessageService;
 import com.gagecottom.nationbuilder.service.NationService;
 import com.gagecottom.nationbuilder.service.SecurityService;
 import com.gagecottom.nationbuilder.service.UserService;
@@ -25,12 +26,15 @@ public class UserController {
     private UserService userService;
     @Autowired
     private NationService nationService;
+    @Autowired
+    private MessageService messageService;
 
     @Autowired
     private SecurityService securityService;
 
     @Autowired
     private UserValidator userValidator;
+    private boolean newMessage;
 
     @GetMapping("/registration")
     public String registration(Model model) {
@@ -104,6 +108,7 @@ public class UserController {
     }
     @GetMapping("/user")
     public String user(Model model) {
+    	newMessage = false;
     	Nation nation = new Nation();
     	String username;
     	Object principal =SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -115,7 +120,15 @@ public class UserController {
     	
     	User user=userService.findByUsername(username);
     	nation =nationService.findNationById(user.getId());
+    	
     	model.addAttribute("nation", nation);
+    	messageService.findMessagesByNationId(user.getId()).forEach(
+    			message -> {
+    				if(message.getNewMessage()==true) {
+    					newMessage = true;
+    				}
+    			});
+    	model.addAttribute("message", newMessage);
     	return "user";
     }
 }

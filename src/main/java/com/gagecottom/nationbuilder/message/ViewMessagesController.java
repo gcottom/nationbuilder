@@ -36,6 +36,12 @@ public class ViewMessagesController {
 		List<Message> messages = new ArrayList<Message>();
 		messageService.findMessagesByNationId(user.getId()).forEach(messages::add);
 		model.addAttribute("messages", messages);
+		Message message;
+		for(int i= 0; i<messages.size(); i++) {
+			message=messages.get(i);
+			message.setNewMessage(false);
+			messageService.saveMessage(message);
+		}
 		return "viewMessages";
 	}
 }
