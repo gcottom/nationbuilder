@@ -16,7 +16,6 @@ Money: ${nation.getMoney()}/500</p>
 <p>Library provides: +3 technology</p>
 <c:choose>
 <c:when test ="${canBuild.getCanBuild()}">
-<form>
 <a href="buildLibrary-gc23">Click here to build library!</a>
 </c:when>
 <c:otherwise>

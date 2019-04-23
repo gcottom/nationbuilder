@@ -16,7 +16,6 @@ Money: ${nation.getMoney()}/500</p>
 <p>Library provides: +3 population</p>
 <c:choose>
 <c:when test ="${canBuild.getCanBuild()}">
-<form>
 <a href="buildBasicFarm-gc23">Click here to build basic farm!</a>
 </c:when>
 <c:otherwise>

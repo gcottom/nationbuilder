@@ -14,7 +14,6 @@ Production: ${nation.getProduction()}/100<br>
 Money: ${nation.getMoney()}/500</p>
 <c:choose>
 <c:when test ="${canBuild.getCanBuild()}">
-<form>
 <a href="buyHousing-gc23">Click here to build housing!</a>
 </c:when>
 <c:otherwise>

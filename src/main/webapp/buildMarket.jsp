@@ -16,7 +16,6 @@ Money: ${nation.getMoney()}/500</p>
 <p>Market provides:+3 Money</p>
 <c:choose>
 <c:when test ="${canBuild.getCanBuild()}">
-<form>
 <a href="buildMarket-gc23">Click here to build market!</a>
 </c:when>
 <c:otherwise>

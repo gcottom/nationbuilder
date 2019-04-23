@@ -11,9 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.gagecottom.nationbuilder.model.User;
-import com.gagecottom.nationbuilder.nation.Nation;
 import com.gagecottom.nationbuilder.service.MessageService;
-import com.gagecottom.nationbuilder.service.NationService;
 import com.gagecottom.nationbuilder.service.UserService;
 @Controller
 public class ViewMessagesController {

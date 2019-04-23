@@ -15,7 +15,9 @@
 <p>Username:${pageContext.request.userPrincipal.name}</p><br>
 <p>Current Nation Capitol:${nation.getNationCapitol()}</p><br>
 <form method="POST" action="${contextPath}/editNationCapitol" class="form-editnationcapitol">
-<input name="nationCapitol" type="text" class="form-control" autofocus="true"/>
+<input name="nationCapitol" type="text" class="form-control"/>
   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
  <button class="btn btn-lg btn-primary btn-block" type="submit">Update Nation Capitol</button>
 </form>
+</div>
+</body>

@@ -16,7 +16,6 @@ Money: ${nation.getMoney()}/1000</p>
 <p>Library provides: +5 production</p>
 <c:choose>
 <c:when test ="${canBuild.getCanBuild()}">
-<form>
 <a href="buildForge-gc23">Click here to build forge!</a>
 </c:when>
 <c:otherwise>

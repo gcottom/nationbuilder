@@ -15,7 +15,9 @@
 <p>Username:${pageContext.request.userPrincipal.name}</p><br>
 <p>Current Nation Name:${nation.getNationName()}</p><br>
 <form method="POST" action="${contextPath}/editNationName" class="form-editnationname">
-<input name="nationName" type="text" class="form-control" autofocus="true"/>
+<input name="nationName" type="text" class="form-control"/>
   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
  <button class="btn btn-lg btn-primary btn-block" type="submit">Update Nation Name</button>
 </form>
+</div>
+</body>
