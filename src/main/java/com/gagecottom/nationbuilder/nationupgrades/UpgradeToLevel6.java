@@ -33,7 +33,7 @@ public class UpgradeToLevel6 {
     	nation =nationService.findNationById(user.getId());
     	model.addAttribute("nation", nation);
     	CanBuild canBuild = new CanBuild();
-    	if(nation.getMoney()>=1000000&&nation.getProduction()>=100000&&nation.getTechnology()>=50000&&nation.getPopulation()>=1000000) {
+    	if(nation.getMoney()>=1000000&&nation.getProduction()>=100000&&nation.getTechnology()>=50000&&nation.getPopulation()>=1000000&&nation.getNationLevel()==5) {
     		canBuild.setCanBuild(true);
     	}
     	model.addAttribute("canBuild", canBuild);
@@ -54,8 +54,8 @@ public class UpgradeToLevel6 {
     	User user=userService.findByUsername(username);
     	nation =nationService.findNationById(user.getId());
 		nation.setNationLevel(6);
-		nation.setLevel1(false);
-		nation.setLevel2(true);
+		nation.setLevel5(false);
+		nation.setLevel6(true);
 		nation.setProduction(nation.getProduction()-1000);
 		nation.setMoney(nation.getMoney()-1000);
 		nation.setTechnology(nation.getTechnology()-250);

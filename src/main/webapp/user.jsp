@@ -17,6 +17,7 @@ td{height: 25px; vertical-align: middle; padding: 20px; text-align:left;}
 </head>
 <body>
 <div style="float: right; width:50%; text-align: right;" class="container">
+<p>Turn: ${turn}</p>
 <h3>Customize your nation</h3>
 <a href="editNationName">Edit Nation Name</a><br>
 <a href="editNationCapitol">Edit Nation Capitol</a><br>
