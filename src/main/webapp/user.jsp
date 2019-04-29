@@ -8,15 +8,15 @@
 <style>
 
 table, th, td {border: 1px solid black;}
-td{height: 40px;}
-th, td{padding: 15px; text-align: left;}</style>
+td{height: 25px; vertical-align: middle; padding: 20px; text-align:left;}
+</style>
 <meta charset="utf-8">
 <meta http-equiv="refresh" content="30">
     <title>View User Info</title>
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div style="float: right; width:50%;" class="container">
+<div style="float: right; width:50%; text-align: right;" class="container">
 <h3>Customize your nation</h3>
 <a href="editNationName">Edit Nation Name</a><br>
 <a href="editNationCapitol">Edit Nation Capitol</a><br>
@@ -201,7 +201,7 @@ th, td{padding: 15px; text-align: left;}</style>
 </div>
 <div class="container" style="float: left; width:50%;">
 <h1>My Information</h1>
-<p>Username:${pageContext.request.userPrincipal.name}</p>
+Username:${pageContext.request.userPrincipal.name}
 <table>
 <thead>
 <tr><td>Producing<br>Per Turn:</td>
@@ -211,45 +211,45 @@ Technology: ${nation.getTechnologyTurn()}<br>
 Money: ${nation.getMoneyTurn()}</td></tr>
 
 <tr>
-<td>Nation Level:</td>
+<td>Nation Level</td>
 <td>${nation.getNationLevel()}</td></tr>
 <tr>
-<td><p>Money:</p></td>
-<td><p>${nation.getMoney()}</p></td>
+<td>Money</td>
+<td>${nation.getMoney()}</td>
 </tr>
 <tr>
-<td><p>Technology</p></td>
-<td><p>${nation.getTechnology()}</p></td>
+<td>Technology</td>
+<td>${nation.getTechnology()}</td>
 </tr>
-<tr><td><p>Population</p></td>
+<tr><td>Population</td>
 <td>${nation.getPopulation()}</td></tr>
-<tr><td><p>Population Limit</p></td>
+<tr><td>Population Limit</td>
 <td>${nation.getPopulationLimit()}</td></tr>
 <tr>
-<td><p>Production</p></td>
+<td>Production</td>
 <td>${nation.getProduction()}</td></tr>
 <tr>
-<td><p>Nation Name</p></td>
-<td><p>${nation.getNationName()}</p></td>
+<td>Nation Name</td>
+<td>${nation.getNationName()}</td>
 </tr>
 <tr>
-<td><p>Nation Capitol</p></td>
-<td><p>${nation.getNationCapitol()}</p></td>
+<td>Nation Capitol</td>
+<td>${nation.getNationCapitol()}</td>
 </tr>
 <tr>
-<td><p>Government</p></td>
-<td><p>${nation.getGovernment()}</p></td>
+<td>Government</td>
+<td>${nation.getGovernment()}</td>
 </tr>
 <tr>
-<td><p>Resources</p></td>
-<td><p>${nation.getResource1()}</p>
-<p>${nation.getResource2()}</p>
-<p>${nation.getResource3()}</p>
-<p>${nation.getResource4()}</p></td>
+<td>Resources</td>
+<td>${nation.getResource1()}<br>
+${nation.getResource2()}<br>
+${nation.getResource3()}<br>
+${nation.getResource4()}</td>
 </tr>
 <tr>
-<td><p>At War:</p></td>
-<td><p>${nation.isAtWar()}</p></td></tr>
+<td>At War</td>
+<td>${nation.isAtWar()}</td></tr>
 <c:if test="${nation.isAtWar()}">
 <tr><td>At War<br> Against:</td>
 <td><a href="nation/${ nation.getAtWarWith()}">Nation</a>
@@ -258,13 +258,13 @@ Money: ${nation.getMoneyTurn()}</td></tr>
 </c:if>
 <c:if test="${nation.getNationLevel() gt 2}">
 <tr>
-<td>Troops:</td>
+<td>Troops</td>
 <td>${nation.getTroops()}</td>
 </tr>
 </c:if>
 <tr>
-<td><p>Improvements</p></td>
-<td><p><c:choose>
+<td>Improvements</td>
+<td><c:choose>
 <c:when test="${nation.isHasLibrary()}">
 Library<br>
 </c:when>
@@ -431,7 +431,7 @@ Commercial Area<br>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
-</p>
+
 </td></tr>
 
 
