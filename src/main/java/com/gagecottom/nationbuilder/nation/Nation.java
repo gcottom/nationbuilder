@@ -65,7 +65,16 @@ public class Nation {
 	private boolean federalReserve = false;
 	private boolean atWar= false;
 	private int atWarWith = 0;
+	private int troops = 0;
 	
+	
+	
+	public int getTroops() {
+		return troops;
+	}
+	public void setTroops(int troops) {
+		this.troops = troops;
+	}
 	public boolean isAtWar() {
 		return atWar;
 	}
