@@ -64,6 +64,9 @@ public class BuyTroopsController {
     	if(troops+nation.getTroops()>nation.getPopulation()*.50) {
     		message="You can not have more than 1/2 of your population as military";
     	}
+    	if(troops-nation.getTroops()<0) {
+    		message="You can not have negative troops";
+    	}
     	model.addAttribute("message", message);
 		model.addAttribute("nation", nation);
 	

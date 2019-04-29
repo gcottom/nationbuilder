@@ -40,8 +40,8 @@ th, td{padding: 15px; text-align: left;}</style>
 <a href="buyAdvancedHousing">Buy Advanced Housing</a><br>
 </c:if>
 <c:if test="${nation.getNationLevel() gt 2}">
-<h3>Buy Troops</h3>
-<a href="buyTroops">Buy Troops</a>
+<h3>Manage Troops</h3>
+<a href="buyTroops">Manage Troops</a>
 </c:if>
 <h3>Upgrade Nation</h3>
 <c:choose>
