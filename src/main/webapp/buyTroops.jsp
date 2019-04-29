@@ -11,9 +11,12 @@
 <div>
 <p>
 Money: ${nation.getMoney()}/1 per troop</p>
+<p>Population: ${nation.getPopulation()}</p>
+<p>Max Purchase: ${maxTroops}</p>
+<p>Total Troops: ${troops}</p>
 <form method="POST" action="buyTroopsCheck">
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-<input name="troops" type="number" step="1" pattern="\d+" placeholder="${troops}"/>
+<input name="troops" type="number" step="1" pattern="\d+" placeholder="0"/>
 <button type ="submit">Purchase</button>
 </form>
 

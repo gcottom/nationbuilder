@@ -348,6 +348,89 @@ Bank<br>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
+<c:choose>
+<c:when test="${nation.isResearchLab()}">
+Research Lab<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isHarbor()}">
+Harbor<br></c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAdvancedFarming()}">
+Advanced Farming<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAdvancedForge()}">
+Advanced Forge<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+
+<c:choose>
+<c:when test="${nation.isFactory()}">
+Factory<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAdvancedPlantation()}">
+Advanced Plantation<br></c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isUniversity()}">
+University<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isStockExchange()}">
+Stock Exchange<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+
+<c:choose>
+<c:when test="${nation.isIndustryArea()}">
+Industry Area<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAgricultureArea()}">
+Agriculture Area<br></c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isCampusArea()}">
+Campus Area<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isCommercialArea()}">
+Commercial Area<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
 </p>
 </td></tr>
 

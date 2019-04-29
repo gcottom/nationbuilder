@@ -35,6 +35,8 @@ public class BuyTroopsController {
     	User user=userService.findByUsername(username);
     	nation =nationService.findNationById(user.getId());
     	troops = nation.getTroops();
+    	int maxTroops = (int) (nation.getPopulation()*.5)-troops;
+    	model.addAttribute("maxTroops", maxTroops);
 		model.addAttribute("troops", troops);
 		model.addAttribute("nation", nation);
 		return "buyTroops";
