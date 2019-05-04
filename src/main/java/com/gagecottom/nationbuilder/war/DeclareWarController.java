@@ -29,6 +29,27 @@ public String declareWar(@PathVariable("id") int id, Model model) {
 	WarDeclaration war = new WarDeclaration();
 	war.setTargetId(id);
 	model.addAttribute("war", war);
+	String message;
+	String username;
+	Object principal =SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	if (principal instanceof UserDetails) {
+		   username = ((UserDetails)principal).getUsername();
+		} else {
+		   username = principal.toString();
+		}
+	
+	User user=userService.findByUsername(username);
+	Nation nation = new Nation();
+	nation = nationService.findNationById(user.getId());
+	Nation enemy = new Nation();
+	enemy = nationService.findNationById(id);
+	if(nation.isAtWar()==false&&enemy.isAtWar()==false) {
+		message = "<a href=\"declareWar-gc23\">Click here to declare war!</a>";
+	}
+	else {
+		message = "Unable to declare war at this time";
+	}
+	model.addAttribute("message", message);
 	return "declareWar";
 	
 }
