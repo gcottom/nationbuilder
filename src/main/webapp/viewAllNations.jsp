@@ -37,7 +37,7 @@
 <td><a href="<c:out value="${nation.getLink()}/sendMessage"/>">Message</a></td>
 <td>
 <c:if test="${nation.getNationLevel() gt 2}">
-<a href="<c:out value="${nation.getLink()}/declareWar"/>">Declare War</a></td>
+<a href="${nation.getLink()}/declareWar">Declare War</a></td>
 </c:if>
 </tr>
 </c:forEach>

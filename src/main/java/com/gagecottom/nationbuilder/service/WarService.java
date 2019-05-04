@@ -4,11 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import com.gagecottom.nationbuilder.model.User;
 import com.gagecottom.nationbuilder.repository.WarRepository;
 import com.gagecottom.nationbuilder.war.WarDeclaration;
 
@@ -16,8 +13,6 @@ import com.gagecottom.nationbuilder.war.WarDeclaration;
 public class WarService {
 @Autowired
 WarRepository warRepository;
-@Autowired
-UserService userService;
 public void saveWar(WarDeclaration war) {
 	warRepository.save(war);
 }

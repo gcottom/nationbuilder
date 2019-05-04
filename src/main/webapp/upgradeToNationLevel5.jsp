@@ -14,6 +14,11 @@ Technology:${nation.getTechnology()}/10000<br>
 Production: ${nation.getProduction()}/10000<br>
 Money: ${nation.getMoney()}/10000<br>
 Population: ${nation.getPopulation()}/50000</p>
+<p>Built Research Lab: ${nation.isResearchLab()}<br>
+Built Harbor: ${nation.isHarbor()}<br>
+Built Advanced Farming: ${nation.isAdvancedFarming()}<br>
+Built Advanced Forge: ${nation.isAdvancedForge()}</p>
+
 <p>Nation Level 5 unlocks level 5 improvements and wonders</p>
 <c:choose>
 <c:when test ="${canBuild.getCanBuild()}">

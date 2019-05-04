@@ -11,7 +11,7 @@
 <div>
 
 <p>Are you sure you want to declare war</p>
-
+<p>
 <a href="declareWar-gc23">Click here to declare war!</a>
 <a href="user">Return to User</a></p>
 
