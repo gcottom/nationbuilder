@@ -14,6 +14,10 @@ Technology:${nation.getTechnology()}/1000<br>
 Production: ${nation.getProduction()}/2500<br>
 Money: ${nation.getMoney()}/2500<br>
 Population: ${nation.getPopulation()}/2500</p>
+Built Forge: ${nation.isForge()}<br>
+Built Great Library: ${nation.isGreatLibrary()}<br>
+Built Plantation: ${nation.isPlantation()}<br>
+Built Large Market: ${nation.isLargeMarket()}</p>
 <p>Nation Level 3 unlocks level 3 improvements and wonders</p>
 <c:choose>
 <c:when test ="${canBuild.getCanBuild()}">

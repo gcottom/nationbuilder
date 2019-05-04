@@ -22,7 +22,7 @@ public class ScheduledTasks {
 	WarService warService;
 	@Autowired
 	NationService nationService;
-    @Scheduled(fixedRate =2500)
+    @Scheduled(fixedRate =200)
     public void Simulate() {
     	List<Nation> nations = new ArrayList<Nation>();
 		Nation currentNation= new Nation();

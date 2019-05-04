@@ -24,6 +24,7 @@
 <th>Nation Ruler</th>
 <th>Link</th>
 <th>Message</th>
+<th>Declare War</th>
 </tr>
 </thead>
 <tbody>
@@ -34,6 +35,10 @@
 <td><c:out value="${nation.getRulerName()}"/></td>
 <td><a href="<c:out value="${nation.getLink()}"/>">Link</a></td>
 <td><a href="<c:out value="${nation.getLink()}/sendMessage"/>">Message</a></td>
+<td>
+<c:if test="${nation.getNationLevel() gt 2}">
+<a href="<c:out value="${nation.getLink()}/declareWar"/>">Declare War</a></td>
+</c:if>
 </tr>
 </c:forEach>
 </tbody></table>
