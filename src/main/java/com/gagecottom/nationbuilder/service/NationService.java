@@ -79,6 +79,16 @@ public Nation findNationById(int id) {
 	Optional<Boolean> atWar = nation.map(Nation::isAtWar);
 	Optional<Integer> atWarWith = nation.map(Nation::getAtWarWith);
 	Optional<Integer> troops = nation.map(Nation::getTroops);
+	Optional<Boolean> beer = nation.map(Nation::isBeer);
+	Optional<Boolean> fastFood = nation.map(Nation::isFastFood);
+	Optional<Boolean> fossilFuels = nation.map(Nation::isFossilFuels);
+	Optional<Boolean> preciousMetals = nation.map(Nation::isPreciousMetals);
+	Optional<Boolean> cashCrops = nation.map(Nation::isCashCrops);
+	boolean isBeer = beer.get();
+	boolean isFastFood = fastFood.get();
+	boolean isFossilFuels = fossilFuels.get();
+	boolean isPreciousMetals = preciousMetals.get();
+	boolean isCashCrops = cashCrops.get();
 	int numTroops = troops.get();
 	boolean isAtWar = atWar.get();
 	int isAtWarWith = atWarWith.get();
@@ -136,6 +146,11 @@ public Nation findNationById(int id) {
 	String newResource2 = resource2.get();
 	String newResource3 = resource3.get();
 	String newResource4 = resource4.get();
+	newNation.setBeer(isBeer);
+	newNation.setFastFood(isFastFood);
+	newNation.setFossilFuels(isFossilFuels);
+	newNation.setPreciousMetals(isPreciousMetals);
+	newNation.setCashCrops(isCashCrops);
 	newNation.setTroops(numTroops);
 	newNation.setAtWar(isAtWar);
 	newNation.setAtWarWith(isAtWarWith);

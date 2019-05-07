@@ -67,7 +67,7 @@ public class UpgradeToLevel4 {
 		Message message = new Message();
 		message.setReceiverId(nation.getId());
 		message.setSenderId(0);
-		message.setMessage("You have upgraded your nation to level 4. You have unlocked new improvements. Build all level 4 improvements to upgrade your nation to level 5.");
+		message.setMessage("You have upgraded your nation to level 4. You have unlocked new improvements. You can now buy 10000 housing at a time using the \"Buy Advanced Housing\" option. Build all level 4 improvements to upgrade your nation to level 5.");
 		messageService.saveMessage(message);
 		
 		return "redirect:/user";

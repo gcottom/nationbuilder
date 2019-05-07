@@ -242,6 +242,61 @@ public class ScheduledTasks {
 			if(currentNation.getResource4().equals("Wood")) {
 				resources.setProduction(resources.getProduction()+3);
 			}
+			
+			//calculate bonus resources
+			if((currentNation.getResource1().equals("Water")||currentNation.getResource2().equals("Water")||currentNation.getResource3().equals("Water")||currentNation.getResource4().equals("Water"))&&(currentNation.getResource1().equals("Wheat")||currentNation.getResource2().equals("Wheat")||currentNation.getResource3().equals("Wheat")||currentNation.getResource4().equals("Wheat"))){
+				currentNation.setBeer(true);
+				}
+			else {
+				currentNation.setBeer(false);
+			}
+			if((currentNation.getResource1().equals("Water")||currentNation.getResource2().equals("Water")||currentNation.getResource3().equals("Water")||currentNation.getResource4().equals("Water"))&&(currentNation.getResource1().equals("Wheat")||currentNation.getResource2().equals("Wheat")||currentNation.getResource3().equals("Wheat")||currentNation.getResource4().equals("Wheat"))&&(currentNation.getResource1().equals("Meat")||currentNation.getResource2().equals("Meat")||currentNation.getResource3().equals("Meat")||currentNation.getResource4().equals("Meat"))){
+				currentNation.setFastFood(true);
+				}
+			else {
+				currentNation.setFastFood(false);
+			}
+			if((currentNation.getResource1().equals("Coal")||currentNation.getResource2().equals("Coal")||currentNation.getResource3().equals("Coal")||currentNation.getResource4().equals("Coal"))&&(currentNation.getResource1().equals("Oil")||currentNation.getResource2().equals("Oil")||currentNation.getResource3().equals("Oil")||currentNation.getResource4().equals("Oil"))){
+				currentNation.setFossilFuels(true);
+				}
+			else {
+				currentNation.setFossilFuels(false);
+			}
+			if((currentNation.getResource1().equals("Gold")||currentNation.getResource2().equals("Gold")||currentNation.getResource3().equals("Gold")||currentNation.getResource4().equals("Gold"))&&(currentNation.getResource1().equals("Silver")||currentNation.getResource2().equals("Silver")||currentNation.getResource3().equals("Silver")||currentNation.getResource4().equals("Silver"))){
+				currentNation.setPreciousMetals(true);
+				}
+			else {
+				currentNation.setPreciousMetals(false);
+			}
+			if((currentNation.getResource1().equals("Wheat")||currentNation.getResource2().equals("Wheat")||currentNation.getResource3().equals("Wheat")||currentNation.getResource4().equals("Wheat"))&&(currentNation.getResource1().equals("Cotton")||currentNation.getResource2().equals("Cotton")||currentNation.getResource3().equals("Cotton")||currentNation.getResource4().equals("Cotton"))&&(currentNation.getResource1().equals("Wood")||currentNation.getResource2().equals("Wood")||currentNation.getResource3().equals("Wood")||currentNation.getResource4().equals("Wood"))){
+				currentNation.setCashCrops(true);
+				}
+			else {
+				currentNation.setCashCrops(false);
+			}
+			if(currentNation.isBeer()) {
+				resources.setMoney(resources.getMoney()+4);
+				resources.setProduction(resources.getProduction()+2);
+				resources.setPopulation(resources.getPopulation()+2);
+			}
+			if(currentNation.isFastFood()) {
+				resources.setMoney(resources.getMoney()+6);
+				resources.setProduction(resources.getProduction()+3);
+				resources.setPopulation(resources.getPopulation()+3);
+			}
+			if(currentNation.isFossilFuels()) {
+				resources.setMoney(resources.getMoney()+5);
+				resources.setProduction(resources.getProduction()+5);
+			}
+			if(currentNation.isPreciousMetals()) {
+				resources.setMoney(resources.getMoney()+7);
+				resources.setProduction(resources.getProduction()+3);
+			}
+			if(currentNation.isCashCrops()) {
+				resources.setMoney(resources.getMoney()+5);
+				resources.setProduction(resources.getProduction()+3);
+				resources.setPopulation(resources.getPopulation()+2);
+			}
 			currentNation.setMoney(currentNation.getMoney()+resources.getMoney());
 			currentNation.setTechnology(currentNation.getTechnology()+resources.getTechnology());
 			currentNation.setPopulation(currentNation.getPopulation()+resources.getPopulation());

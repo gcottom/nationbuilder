@@ -249,6 +249,26 @@ ${nation.getResource3()}<br>
 ${nation.getResource4()}</td>
 </tr>
 <tr>
+<td>Bonus Resources</td>
+<td>
+<c:if test="${nation.isBeer()}">
+Beer<br>
+</c:if>
+<c:if test="${nation.isFastFood()}">
+Fast Food<br>
+</c:if>
+<c:if test="${nation.isFossilFuels()}">
+Fossil Fuels<br>
+</c:if>
+<c:if test="${nation.isPreciousMetals()}">
+Precious Metals<br>
+</c:if>
+<c:if test="${nation.isCashCrops()}">
+Cash Crops
+</c:if>
+</td>
+</tr>
+<tr>
 <td>At War</td>
 <td>${nation.isAtWar()}</td></tr>
 <c:if test="${nation.isAtWar()}">

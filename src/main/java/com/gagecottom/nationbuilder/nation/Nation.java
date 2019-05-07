@@ -66,9 +66,51 @@ public class Nation {
 	private boolean atWar= false;
 	private int atWarWith = 0;
 	private int troops = 0;
+	private boolean beer = false;
+	private boolean fastFood = false;
+	private boolean fossilFuels = false;
+	private boolean nuclearPower = false;
+	private boolean preciousMetals = false;
+	private boolean cashCrops = false;
 	
 	
 	
+	public boolean isBeer() {
+		return beer;
+	}
+	public void setBeer(boolean beer) {
+		this.beer = beer;
+	}
+	public boolean isFastFood() {
+		return fastFood;
+	}
+	public void setFastFood(boolean fastFood) {
+		this.fastFood = fastFood;
+	}
+	public boolean isFossilFuels() {
+		return fossilFuels;
+	}
+	public void setFossilFuels(boolean fossilFuels) {
+		this.fossilFuels = fossilFuels;
+	}
+	public boolean isNuclearPower() {
+		return nuclearPower;
+	}
+	public void setNuclearPower(boolean nuclearPower) {
+		this.nuclearPower = nuclearPower;
+	}
+	public boolean isPreciousMetals() {
+		return preciousMetals;
+	}
+	public void setPreciousMetals(boolean preciousMetals) {
+		this.preciousMetals = preciousMetals;
+	}
+	public boolean isCashCrops() {
+		return cashCrops;
+	}
+	public void setCashCrops(boolean cashCrops) {
+		this.cashCrops = cashCrops;
+	}
 	public int getTroops() {
 		return troops;
 	}
