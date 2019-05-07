@@ -8,12 +8,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.stereotype.Controller;
 import com.gagecottom.nationbuilder.improvements.CanBuild;
+import com.gagecottom.nationbuilder.message.Message;
 import com.gagecottom.nationbuilder.model.User;
 import com.gagecottom.nationbuilder.nation.Nation;
+import com.gagecottom.nationbuilder.service.MessageService;
 import com.gagecottom.nationbuilder.service.NationService;
 import com.gagecottom.nationbuilder.service.UserService;
 @Controller
 public class UpgradeToLevel2 {
+	@Autowired
+	private MessageService messageService;
 	@Autowired
 	private UserService userService;
 	@Autowired
@@ -60,6 +64,11 @@ public class UpgradeToLevel2 {
 		nation.setMoney(nation.getMoney()-1000);
 		nation.setTechnology(nation.getTechnology()-250);
 		nationService.createNation(nation);
+		Message message = new Message();
+		message.setReceiverId(nation.getId());
+		message.setSenderId(0);
+		message.setMessage("You have upgraded your nation to level 2. You have unlocked new improvements. You have reached your population limit! Click \"buy housing\" to build additional housing for your population. Build all level 2 improvements to upgrade your nation to level 3.");
+		messageService.saveMessage(message);
 		return "redirect:/user";
 	}
 }

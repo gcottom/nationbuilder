@@ -1,5 +1,6 @@
 package com.gagecottom.nationbuilder.message;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +13,7 @@ public class Message {
 private int id;
 private int receiverId;
 private int senderId;
+@Column(name="note", length = 2500)
 private String note;
 private Boolean newMessage=true;
 public Message() {

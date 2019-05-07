@@ -20,7 +20,7 @@
 <thead>
 <tr>
 <th>ID</th>
-<th>Nation From ID</th>
+<th>Sender ID</th>
 <th>Message</th>
 </tr>
 </thead>

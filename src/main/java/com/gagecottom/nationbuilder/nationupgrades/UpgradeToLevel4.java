@@ -8,14 +8,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.stereotype.Controller;
 import com.gagecottom.nationbuilder.improvements.CanBuild;
+import com.gagecottom.nationbuilder.message.Message;
 import com.gagecottom.nationbuilder.model.User;
 import com.gagecottom.nationbuilder.nation.Nation;
+import com.gagecottom.nationbuilder.service.MessageService;
 import com.gagecottom.nationbuilder.service.NationService;
 import com.gagecottom.nationbuilder.service.UserService;
 @Controller
 public class UpgradeToLevel4 {
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private MessageService messageService;
 	@Autowired
 	private NationService nationService;
 	@GetMapping("/upgradeToLevel4")
@@ -60,6 +64,12 @@ public class UpgradeToLevel4 {
 		nation.setMoney(nation.getMoney()-1000);
 		nation.setTechnology(nation.getTechnology()-250);
 		nationService.createNation(nation);
+		Message message = new Message();
+		message.setReceiverId(nation.getId());
+		message.setSenderId(0);
+		message.setMessage("You have upgraded your nation to level 4. You have unlocked new improvements. Build all level 4 improvements to upgrade your nation to level 5.");
+		messageService.saveMessage(message);
+		
 		return "redirect:/user";
 	}
 }

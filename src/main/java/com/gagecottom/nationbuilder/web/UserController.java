@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import com.gagecottom.nationbuilder.ScheduledTasks;
+import com.gagecottom.nationbuilder.message.Message;
 import com.gagecottom.nationbuilder.model.User;
 import com.gagecottom.nationbuilder.nation.Nation;
 import com.gagecottom.nationbuilder.service.MessageService;
@@ -74,8 +75,8 @@ public class UserController {
         nation.setNationLevel(1);
         nation.setLevel1(true);
         String protocol = "http";
-        String host = "localhost";
-        int port = 8080;
+        String host = "gagecottom.redirectme.net";
+        int port = 80;
         String path = "/nation/" +userForm.getId();
         try {
 			URL url = new URL (protocol, host, port, path);
@@ -88,7 +89,11 @@ public class UserController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
+        Message message = new Message();
+        message.setSenderId(0);
+        message.setReceiverId(nation.getId());
+        message.setMessage("Welcome. Your nation has been created. Please take time to set your nation name and nation capitol. You can also edit your resources to change what your nation produces each turn. Turns take place every minute. Your production is shown at the top of the user page. Improvements increase the amount of each type of production your nation can produce. Build all level 1 improvements in order to unlock the upgrade to nation level 2 option. Upgrading your nation level allows you to build more buildings, manage an army, go to war with other nations and much more. Enjoy playing.");
+        messageService.saveMessage(message);
         return "redirect:/welcome";
     }
 
