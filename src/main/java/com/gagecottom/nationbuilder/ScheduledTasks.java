@@ -22,7 +22,7 @@ public class ScheduledTasks {
 	WarService warService;
 	@Autowired
 	NationService nationService;
-    @Scheduled(fixedRate =200)
+    @Scheduled(fixedRate =5000)
     public void Simulate() {
     	List<Nation> nations = new ArrayList<Nation>();
 		Nation currentNation= new Nation();
@@ -306,12 +306,13 @@ public class ScheduledTasks {
 			currentNation.setMoneyTurn(resources.getMoney()+1);
 			currentNation.setTechnologyTurn(resources.getTechnology()+1);
 			nationService.createNation(currentNation);
-			if(warService.getWarByNationId(currentNation.getId()).getEndTurn()==turn) {
+			if(warService.getWarByNationId(currentNation.getId()).getEndTurn()==turn){
 				WarDeclaration war = new WarDeclaration();
 				war =warService.getWarByNationId(currentNation.getId());
-				war.setActive(false);
 				Nation otherNation = new Nation();
-				otherNation = nationService.findNationById(war.getInitiatorId());
+				if(war.getId()!=0) {
+					war.setActive(false);
+					otherNation = nationService.findNationById(war.getInitiatorId());
 					otherNation.setAtWar(false);
 					otherNation.setAtWarWith(0);
 					nationService.createNation(otherNation);
@@ -319,15 +320,8 @@ public class ScheduledTasks {
 					otherNation.setAtWar(false);
 					otherNation.setAtWarWith(0);
 					nationService.createNation(otherNation);	
-					}
+					}}
 				}
 		turn++;
     }
-    public void scheduleTaskWithFixedRate() {}
-
-    public void scheduleTaskWithFixedDelay() {}
-
-    public void scheduleTaskWithInitialDelay() {}
-
-    public void scheduleTaskWithCronExpression() {}
 }
