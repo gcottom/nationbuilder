@@ -84,6 +84,10 @@ public Nation findNationById(int id) {
 	Optional<Boolean> fossilFuels = nation.map(Nation::isFossilFuels);
 	Optional<Boolean> preciousMetals = nation.map(Nation::isPreciousMetals);
 	Optional<Boolean> cashCrops = nation.map(Nation::isCashCrops);
+	Optional<Boolean> nuclearPower = nation.map(Nation::isNuclearPower);
+	Optional<Boolean> nuclearReactor = nation.map(Nation::isNuclearReactor);
+	boolean isNuclearPower = nuclearPower.get();
+	boolean isNuclearReactor = nuclearReactor.get();
 	boolean isBeer = beer.get();
 	boolean isFastFood = fastFood.get();
 	boolean isFossilFuels = fossilFuels.get();
@@ -208,7 +212,8 @@ public Nation findNationById(int id) {
 	newNation.setCorporateFarming(newCorporateFarming);
 	newNation.setGovernmentGrants(newGovernmentGrants);
 	newNation.setFederalReserve(newFederalReserve);
-	
+	newNation.setNuclearPower(isNuclearPower);
+	newNation.setNuclearReactor(isNuclearReactor);
 	
 	return newNation;
 }

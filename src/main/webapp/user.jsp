@@ -199,6 +199,14 @@ td{height: 25px; vertical-align: middle; padding: 20px; text-align:left;}
 <c:otherwise>
 </c:otherwise>
 </c:choose>
+<h3>Build Wonders</h3>
+<c:choose>
+<c:when test="${nation.isNuclearReactor()}">
+</c:when>
+<c:otherwise>
+<a href="buildNuclearReactor">Build Nuclear Reactor</a>
+</c:otherwise>
+</c:choose>
 </div>
 <div class="container" style="float: left; width:50%;">
 <h1>My Information</h1>
@@ -264,7 +272,10 @@ Fossil Fuels<br>
 Precious Metals<br>
 </c:if>
 <c:if test="${nation.isCashCrops()}">
-Cash Crops
+Cash Crops<br>
+</c:if>
+<c:if test="${nation.isNuclearPower()}">
+Nuclear Power
 </c:if>
 </td>
 </tr>
@@ -454,7 +465,16 @@ Commercial Area<br>
 </c:choose>
 
 </td></tr>
-
+<tr>
+<td>Wonders</td>
+<td>
+<c:choose>
+<c:when test="${nation.isNuclearReactor()}">
+Nuclear Reactor<br>
+</c:when>
+</c:choose>
+</td>
+</tr>
 
 
 </table></div>

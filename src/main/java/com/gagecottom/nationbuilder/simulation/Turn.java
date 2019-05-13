@@ -8,16 +8,16 @@ import javax.persistence.Id;
 @Entity
 public class Turn {
 @Id
-private int Id;
+private int id;
 private int turn;
 public Turn() {
 	
 }
 public int getId() {
-	return Id;
+	return id;
 }
 public void setId(int id) {
-	Id = id;
+	this.id = id;
 }
 public int getTurn() {
 	return turn;

@@ -72,9 +72,16 @@ public class Nation {
 	private boolean nuclearPower = false;
 	private boolean preciousMetals = false;
 	private boolean cashCrops = false;
+	private boolean nuclearReactor = false;
 	
 	
 	
+	public boolean isNuclearReactor() {
+		return nuclearReactor;
+	}
+	public void setNuclearReactor(boolean nuclearReactor) {
+		this.nuclearReactor = nuclearReactor;
+	}
 	public boolean isBeer() {
 		return beer;
 	}

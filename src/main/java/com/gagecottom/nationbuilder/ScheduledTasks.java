@@ -43,14 +43,15 @@ public class ScheduledTasks {
 		
 		nationService.listAllNations().forEach(nations::add);
 		for(int i=0; i<nations.size(); i++) {
+			ResourceSet resources = new ResourceSet();
 			currentNation=nations.get(i);
 			//add regular turn incentives
-			currentNation.setMoney(currentNation.getMoney()+1);
-			currentNation.setTechnology(currentNation.getTechnology()+1);
-			currentNation.setPopulation(currentNation.getPopulation()+1);
-			currentNation.setProduction(currentNation.getProduction()+1);
+			resources.setMoney(resources.getMoney()+1);
+			resources.setTechnology(resources.getTechnology()+1);
+			resources.setPopulation(resources.getPopulation()+1);
+			resources.setProduction(resources.getProduction()+1);
 		
-			ResourceSet resources = new ResourceSet();
+			
 			//Government Bonus
 			if(currentNation.getGovernment().equals("Democracy")) {
 				resources.setMoney(resources.getMoney()+4);
@@ -288,6 +289,12 @@ public class ScheduledTasks {
 			else {
 				currentNation.setCashCrops(false);
 			}
+			if((currentNation.getResource1().equals("Uranium")||currentNation.getResource2().equals("Uranium")||currentNation.getResource3().equals("Uranium")||currentNation.getResource4().equals("Uranium"))&&currentNation.isNuclearReactor()) {
+				currentNation.setNuclearPower(true);
+			}
+			else {
+				currentNation.setNuclearPower(false);
+			}
 			if(currentNation.isBeer()) {
 				resources.setMoney(resources.getMoney()+4);
 				resources.setProduction(resources.getProduction()+2);
@@ -311,14 +318,19 @@ public class ScheduledTasks {
 				resources.setProduction(resources.getProduction()+3);
 				resources.setPopulation(resources.getPopulation()+2);
 			}
+			if(currentNation.isNuclearPower()) {
+				resources.setMoney(resources.getMoney()+10);
+				resources.setProduction(resources.getProduction()+5);
+				resources.setTechnology(resources.getTechnology()+1);
+			}
 			currentNation.setMoney(currentNation.getMoney()+resources.getMoney());
 			currentNation.setTechnology(currentNation.getTechnology()+resources.getTechnology());
 			currentNation.setPopulation(currentNation.getPopulation()+resources.getPopulation());
 			currentNation.setProduction(currentNation.getProduction()+resources.getProduction());
-			currentNation.setProductionTurn(resources.getProduction()+1);
-			currentNation.setPopulationTurn(resources.getPopulation()+1);
-			currentNation.setMoneyTurn(resources.getMoney()+1);
-			currentNation.setTechnologyTurn(resources.getTechnology()+1);
+			currentNation.setMoneyTurn(resources.getMoney());
+			currentNation.setTechnologyTurn(resources.getTechnology());
+			currentNation.setPopulationTurn(resources.getPopulation());
+			currentNation.setProductionTurn(resources.getProduction());
 			nationService.createNation(currentNation);
 			if(warService.getWarByNationId(currentNation.getId()).getEndTurn()==turn){
 				WarDeclaration war = new WarDeclaration();
