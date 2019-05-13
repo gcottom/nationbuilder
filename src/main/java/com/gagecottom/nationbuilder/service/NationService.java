@@ -225,4 +225,7 @@ public List<Nation> listAllNations(){
 	nationRepository.findAll().forEach(nations::add);
 			return nations;
 }
+public void deleteAll() {
+	nationRepository.deleteAll();
+}
 }

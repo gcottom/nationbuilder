@@ -29,4 +29,7 @@ public void saveTurn(Turn turn) {
 public boolean existsById(int id) {
 	return turnRepository.existsById(id);
 }
+public void deleteAll() {
+	turnRepository.deleteAll();
+}
 }

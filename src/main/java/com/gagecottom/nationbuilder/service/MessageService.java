@@ -42,4 +42,7 @@ public List<Message> findMessagesByNationId(int id){
 	return newMessages;
 	
 }
+public void deleteAll() {
+	messageRepository.deleteAll();
+}
 }

@@ -38,4 +38,7 @@ public List<WarDeclaration> getAllWars(){
 	return wars;
 	
 }
+public void deleteAll() {
+	warRepository.deleteAll();
+}
 }
