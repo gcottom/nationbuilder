@@ -8,8 +8,10 @@ import org.springframework.stereotype.Component;
 
 import com.gagecottom.nationbuilder.nation.Nation;
 import com.gagecottom.nationbuilder.service.NationService;
+import com.gagecottom.nationbuilder.service.TurnService;
 import com.gagecottom.nationbuilder.service.WarService;
 import com.gagecottom.nationbuilder.simulation.ResourceSet;
+import com.gagecottom.nationbuilder.simulation.Turn;
 import com.gagecottom.nationbuilder.war.WarDeclaration;
 
 import java.util.ArrayList;
@@ -17,6 +19,8 @@ import java.util.List;
 
 @Component
 public class ScheduledTasks {
+	@Autowired
+	TurnService turnService;
 	public static int turn =0;
 	@Autowired
 	WarService warService;
@@ -24,6 +28,16 @@ public class ScheduledTasks {
 	NationService nationService;
     @Scheduled(fixedRate =5000)
     public void Simulate() {
+    	if(turnService.existsById(1)==false) {
+    		System.out.print("Turn Not Found In DB");
+    	Turn nTurn = new Turn();
+    	nTurn.setTurn(turn);
+    	nTurn.setId(1);
+    	turnService.saveTurn(nTurn);
+    	}
+    	else {
+    		turn = turnService.findById(1).getTurn();
+    	}
     	List<Nation> nations = new ArrayList<Nation>();
 		Nation currentNation= new Nation();
 		
@@ -323,5 +337,9 @@ public class ScheduledTasks {
 					}}
 				}
 		turn++;
+		Turn mTurn = new Turn();
+		mTurn.setId(1);
+		mTurn.setTurn(turn);
+		turnService.saveTurn(mTurn);
     }
 }
