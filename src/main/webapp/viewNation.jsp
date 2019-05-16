@@ -28,42 +28,44 @@ Money: ${nation.getMoneyTurn()}</td></tr>
 <td>Nation Level:</td>
 <td>${nation.getNationLevel()}</td></tr>
 <tr>
-<td><p>Money:</p></td>
-<td><p>${nation.getMoney()}</p></td>
+<td>Money:</td>
+<td>${nation.getMoney()}</td>
 </tr>
 <tr>
-<td><p>Technology</p></td>
-<td><p>${nation.getTechnology()}</p></td>
+<td>Technology</td>
+<td>${nation.getTechnology()}</td>
 </tr>
-<tr><td><p>Population</p></td>
+<tr><td>Population</td>
 <td>${nation.getPopulation()}</td></tr>
-<tr><td><p>Population Limit</p></td>
+<tr><td>Population Limit</td>
 <td>${nation.getPopulationLimit()}</td></tr>
 <tr>
-<td><p>Production</p></td>
+<td>Production</td>
 <td>${nation.getProduction()}</td></tr>
 <tr>
-<td><p>Nation Name</p></td>
-<td><p>${nation.getNationName()}</p></td>
+<td>Nation Name</td>
+<td>${nation.getNationName()}</td>
 </tr>
 <tr>
-<td><p>Nation Capitol</p></td>
-<td><p>${nation.getNationCapitol()}</p></td>
+<td>Nation Capitol</td>
+<td>${nation.getNationCapitol()}</td>
 </tr>
 <tr>
-<td><p>Government</p></td>
-<td><p>${nation.getGovernment()}</p></td>
+<td>Government</td>
+<td>${nation.getGovernment()}</td>
 </tr>
 <tr>
-<td><p>Resources</p></td>
-<td><p>${nation.getResource1()}</p>
-<p>${nation.getResource2()}</p>
-<p>${nation.getResource3()}</p>
-<p>${nation.getResource4()}</p></td>
+<td>Resources</td>
+<td>
+<img width="30" height="30" src="/resources/${nation.getResource1()}.png" title="${nation.getResource1()}"/>
+<img width="30" height="30" src="/resources/${nation.getResource2()}.png" title="${nation.getResource2()}"/>
+<img width="30" height="30" src="/resources/${nation.getResource3()}.png" title="${nation.getResource3()}"/>
+<img width="30" height="30" src="/resources/${nation.getResource4()}.png" title="${nation.getResource4()}"/></td>
+
 </tr>
 <tr>
-<td><p>Improvements</p></td>
-<td><p><c:choose>
+<td>Improvements</td>
+<td><c:choose>
 <c:when test="${nation.isHasLibrary()}">
 Library<br>
 </c:when>
@@ -119,7 +121,118 @@ Plantation<br>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
-</p>
+<c:choose>
+<c:when test="${nation.isAdvancedWorkshop()}">
+Advanced Workshop<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isCropRotation()}">
+Crop Rotation<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isCollege()}">
+College<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isBank()}">
+Bank<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isResearchLab()}">
+Research Lab<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isHarbor()}">
+Harbor<br></c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAdvancedFarming()}">
+Advanced Farming<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAdvancedForge()}">
+Advanced Forge<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+
+<c:choose>
+<c:when test="${nation.isFactory()}">
+Factory<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAdvancedPlantation()}">
+Advanced Plantation<br></c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isUniversity()}">
+University<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isStockExchange()}">
+Stock Exchange<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+
+<c:choose>
+<c:when test="${nation.isIndustryArea()}">
+Industry Area<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAgricultureArea()}">
+Agriculture Area<br></c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isCampusArea()}">
+Campus Area<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isCommercialArea()}">
+Commercial Area<br>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+
 
 
 

@@ -251,10 +251,11 @@ Money: ${nation.getMoneyTurn()}</td></tr>
 </tr>
 <tr>
 <td>Resources</td>
-<td>${nation.getResource1()}<br>
-${nation.getResource2()}<br>
-${nation.getResource3()}<br>
-${nation.getResource4()}</td>
+<td>
+<img width="30" height="30" src="/resources/${nation.getResource1()}.png" title="${nation.getResource1()}"/>
+<img width="30" height="30" src="/resources/${nation.getResource2()}.png" title="${nation.getResource2()}"/>
+<img width="30" height="30" src="/resources/${nation.getResource3()}.png" title="${nation.getResource3()}"/>
+<img width="30" height="30" src="/resources/${nation.getResource4()}.png" title="${nation.getResource4()}"/></td>
 </tr>
 <tr>
 <td>Bonus Resources</td>

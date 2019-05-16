@@ -15,16 +15,16 @@
 <p>Username:${pageContext.request.userPrincipal.name}</p><br>
 <p>Current Resources:${nation.getResource1()},${nation.getResource2()},${nation.getResource3()},${nation.getResource4()}</p><br>
 <h3>Information:</h3>
-<p>Gold= +5 money</p>
-<p>Water= +3 population</p>
-<p>Wheat= +2 population</p>
-<p>Coal= +2 production</p>
-<p>Oil= +2 production</p>
-<p>Uranium= +1 production</p>
-<p>Meat= +2 population</p>
-<p>Silver= +3 money</p>
-<p>Cotton= +2 production</p>
-<p>Wood= +3 production</p>
+<p><img src="/resources/Gold.png" width="30" height="30"/>Gold= +5 money</p>
+<p><img src="/resources/Water.png" width="30" height="30"/>Water= +3 population</p>
+<p><img src="/resources/Wheat.png" width="30" height="30"/>Wheat= +2 population</p>
+<p><img src="/resources/Coal.png" width="30" height="30"/>Coal= +2 production</p>
+<p><img src="/resources/Oil.png" width="30" height="30"/>Oil= +2 production</p>
+<p><img src="/resources/Uranium.png" width="30" height="30"/>Uranium= +1 production</p>
+<p><img src="/resources/Meat.png" width="30" height="30"/>Meat= +2 population</p>
+<p><img src="/resources/Silver.png" width="30" height="30"/>Silver= +3 money</p>
+<p><img src="/resources/Cotton.png" width="30" height="30"/>Cotton= +2 production</p>
+<p><img src="/resources/Wood.png" width="30" height="30"/>Wood= +3 production</p>
 
 <form:form method="POST" action="${contextPath}/editResources" class="form-editresources" modelAttribute="nation">
 <form:select path="resource1">
