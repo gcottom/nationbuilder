@@ -299,111 +299,112 @@ Nuclear Power
 <td>Improvements</td>
 <td><c:choose>
 <c:when test="${nation.isHasLibrary()}">
-Library<br>
+<img src="/resources/Library.png" width="30" height="30" title="Library"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isHasMarket()}">
-Market<br>
+<img src="/resources/Market.png" width="30" height="30" title="Market"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isHasWorkshop()}">
-Workshop<br>
+<img src="/resources/Workshop.png" width="30" height="30" title="Workshop"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isHasBasicFarm()}">
-Basic Farm<br>
+<img src="/resources/Farm.png" width="30" height="30" title="Basic Farm"/><br>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isGreatLibrary()}">
-Great Library<br>
+<img src="/resources/GreatLibrary.png" width="30" height="30" title="Great Library"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isLargeMarket()}">
-Large Market<br>
+<img src="/resources/LargeMarket.png" width="30" height="30" title="Large Market"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isForge()}">
-Forge<br>
+<img src="/resources/Forge.png" width="30" height="30" title="Forge"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isPlantation()}">
-Plantation<br>
+<img src="/resources/Plantation.png" width="30" height="30" title="Plantation"/><br>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isAdvancedWorkshop()}">
-Advanced Workshop<br>
+<img src="/resources/AdvancedWorkshop.png" width="30" height="30" title="Advanced Workshop"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isCropRotation()}">
-Crop Rotation<br>
+<img src="/resources/CropRotation.png" width="30" height="30" title="Crop Rotation"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isCollege()}">
-College<br>
+<img src="/resources/College.png" width="30" height="30" title="College"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isBank()}">
-Bank<br>
+<img src="/resources/Bank.png" width="30" height="30" title="Bank"/><br>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isResearchLab()}">
-Research Lab<br>
+<img src="/resources/ResearchLab.png" width="30" height="30" title="Research Lab"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isHarbor()}">
-Harbor<br></c:when>
+<img src="/resources/Harbor.png" width="30" height="30" title="Harbor"/>
+</c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isAdvancedFarming()}">
-Advanced Farming<br>
+<img src="/resources/AdvancedFarm.png" width="30" height="30" title="Advanced Farming"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isAdvancedForge()}">
-Advanced Forge<br>
+<img src="/resources/AdvancedForge.png" width="30" height="30" title="Advanced Forge"/><br>
 </c:when>
 <c:otherwise>
 </c:otherwise>
@@ -411,27 +412,29 @@ Advanced Forge<br>
 
 <c:choose>
 <c:when test="${nation.isFactory()}">
-Factory<br>
+<img src="/resources/Factory.png" width="30" height="30" title="Factory"/>
+
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isAdvancedPlantation()}">
-Advanced Plantation<br></c:when>
+<img src="/resources/AdvancedPlantation.png" width="30" height="30" title="Advanced Plantation"/>
+</c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isUniversity()}">
-University<br>
+<img src="/resources/University.png" width="30" height="30" title="University"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isStockExchange()}">
-Stock Exchange<br>
+<img src="/resources/StockExchange.png" width="30" height="30" title="Stock Exchange"/><br>
 </c:when>
 <c:otherwise>
 </c:otherwise>

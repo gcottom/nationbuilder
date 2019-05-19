@@ -47,4 +47,5 @@
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
  <button class="btn btn-lg btn-primary btn-block" type="submit">Update Resources</button>
 </form:form>
+<br><a href="/user">Return to User</a>
 </div>
