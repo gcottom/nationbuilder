@@ -195,17 +195,130 @@ td{height: 25px; vertical-align: middle; padding: 20px; text-align:left;}
 <c:choose>
 <c:when test="${nation.isLevel5()}">
 <a href="upgradeToLevel6">Upgrade to Nation Level 6</a><br>
+<h3>Build Improvements</h3>
+<c:choose>
+<c:when test="${nation.isUniversity()}">
+</c:when>
+<c:otherwise>
+
+<a href="buildUniversity">Build University</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isStockExchange()}">
+</c:when>
+<c:otherwise>
+<a href="buildStockExchange">Build Stock Exchange</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAdvancedPlantation()}">
+</c:when>
+<c:otherwise>
+<a href="buildAdvancedPlantation">Build Advanced Plantation</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isFactory()}">
+</c:when>
+<c:otherwise>
+<a href="buildFactory">Build Factory</a><br>
+</c:otherwise>
+</c:choose>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
+<c:choose>
+<c:when test="${nation.isLevel6()}">
+<h3>Build Improvements</h3>
+<c:choose>
+<c:when test="${nation.isCampusArea()}">
+</c:when>
+<c:otherwise>
+
+<a href="buildCampusArea">Build Campus Area</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isCommercialArea()}">
+</c:when>
+<c:otherwise>
+<a href="buildCommercialArea">Build Commercial Area</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isAgricultureArea()}">
+</c:when>
+<c:otherwise>
+<a href="buildAgricultureArea">Build Agriculture Area</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isIndustryArea()}">
+</c:when>
+<c:otherwise>
+<a href="buildIndustryArea">Build Industry Area</a><br>
+</c:otherwise>
+</c:choose>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.getNationLevel() gt 1}">
 <h3>Build Wonders</h3>
+<c:choose>
+<c:when test="${nation.isGovernmentCenter()}">
+</c:when>
+<c:otherwise>
+<a href="buildGovernmentCenter">Build Government Center</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isIrs()}">
+</c:when>
+<c:otherwise>
+<a href="buildIRS">Build IRS</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isFederalReserve()}">
+</c:when>
+<c:otherwise>
+<a href="buildFederalReserve">Build Federal Reserve</a><br>
+</c:otherwise>
+</c:choose>
 <c:choose>
 <c:when test="${nation.isNuclearReactor()}">
 </c:when>
 <c:otherwise>
-<a href="buildNuclearReactor">Build Nuclear Reactor</a>
+<a href="buildNuclearReactor">Build Nuclear Reactor</a><br>
 </c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isEducationGrants()}">
+</c:when>
+<c:otherwise>
+<a href="buildEducationGrants">Build Education Grants</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isFoodStamps()}">
+</c:when>
+<c:otherwise>
+<a href="buildFoodStamps">Build Food Stamps</a><br>
+</c:otherwise>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isMilitaryIndustrialComplex()}">
+</c:when>
+<c:otherwise>
+<a href="buildMilitaryIndustrialComplex">Build Military Industrial Complex</a>
+</c:otherwise>
+</c:choose>
+
+</c:when>
 </c:choose>
 </div>
 <div class="container" style="float: left; width:50%;">
@@ -442,27 +555,31 @@ Nuclear Power
 
 <c:choose>
 <c:when test="${nation.isIndustryArea()}">
-Industry Area<br>
+<img src="/resources/IndustryArea.png" width="30" height="30" title="Industry Area"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isAgricultureArea()}">
-Agriculture Area<br></c:when>
+<img src="/resources/AgricultureArea.png" width="30" height="30" title="Agriculture Area"/>
+
+</c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isCampusArea()}">
-Campus Area<br>
+<img src="/resources/CampusArea.png" width="30" height="30" title="Campus Area"/>
+
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isCommercialArea()}">
-Commercial Area<br>
+<img src="/resources/CommercialArea.png" width="30" height="30" title="Commercial Area"/>
+
 </c:when>
 <c:otherwise>
 </c:otherwise>
@@ -473,8 +590,38 @@ Commercial Area<br>
 <td>Wonders</td>
 <td>
 <c:choose>
+<c:when test="${nation.isGovernmentCenter()}">
+Government Center<br>
+</c:when>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isIrs()}">
+IRS<br>
+</c:when>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isFederalReserve()}">
+Federal Reserve<br>
+</c:when>
+</c:choose>
+<c:choose>
 <c:when test="${nation.isNuclearReactor()}">
 Nuclear Reactor<br>
+</c:when>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isEducationGrants()}">
+Education Grants<br>
+</c:when>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isFoodStamps()}">
+Food Stamps<br>
+</c:when>
+</c:choose>
+<c:choose>
+<c:when test="${nation.isMilitaryIndustrialComplex()}">
+Military Industrial Complex
 </c:when>
 </c:choose>
 </td>

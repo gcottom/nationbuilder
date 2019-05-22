@@ -72,9 +72,6 @@ public Nation findNationById(int id) {
 	Optional<Boolean> agArea = nation.map(Nation::isAgricultureArea);
 	Optional<Boolean> campArea = nation.map(Nation::isCampusArea);
 	Optional<Boolean> comArea = nation.map(Nation::isCommercialArea);
-	Optional<Boolean> warehouse = nation.map(Nation::isWarehouse);
-	Optional<Boolean> corporateFarming = nation.map(Nation::isCorporateFarming);
-	Optional<Boolean> governmentGrants = nation.map(Nation::isGovernmentGrants);
 	Optional<Boolean> federalReserve = nation.map(Nation::isFederalReserve);
 	Optional<Boolean> atWar = nation.map(Nation::isAtWar);
 	Optional<Integer> atWarWith = nation.map(Nation::getAtWarWith);
@@ -86,6 +83,11 @@ public Nation findNationById(int id) {
 	Optional<Boolean> cashCrops = nation.map(Nation::isCashCrops);
 	Optional<Boolean> nuclearPower = nation.map(Nation::isNuclearPower);
 	Optional<Boolean> nuclearReactor = nation.map(Nation::isNuclearReactor);
+	boolean isIrs= nation.map(Nation::isIrs).get();
+	boolean isEducationGrants = nation.map(Nation::isEducationGrants).get();
+	boolean isFoodStamps = nation.map(Nation::isFoodStamps).get();
+	boolean isGovernmentCenter = nation.map(Nation::isGovernmentCenter).get();
+	boolean isMilitaryIndustrialComplex = nation.map(Nation::isMilitaryIndustrialComplex).get();
 	boolean isNuclearPower = nuclearPower.get();
 	boolean isNuclearReactor = nuclearReactor.get();
 	boolean isBeer = beer.get();
@@ -114,9 +116,6 @@ public Nation findNationById(int id) {
 	boolean agricultureArea = agArea.get();
 	boolean campusArea = campArea.get();
 	boolean commercialArea = comArea.get();
-	boolean newWarehouse = warehouse.get();
-	boolean newCorporateFarming = corporateFarming.get();
-	boolean newGovernmentGrants = governmentGrants.get();
 	boolean newFederalReserve= federalReserve.get();
 	boolean hasForge = forge.get();
 	boolean hasLargeMarket = largeMarket.get();
@@ -150,6 +149,11 @@ public Nation findNationById(int id) {
 	String newResource2 = resource2.get();
 	String newResource3 = resource3.get();
 	String newResource4 = resource4.get();
+	newNation.setIrs(isIrs);
+	newNation.setEducationGrants(isEducationGrants);
+	newNation.setFoodStamps(isFoodStamps);
+	newNation.setGovernmentCenter(isGovernmentCenter);
+	newNation.setMilitaryIndustrialComplex(isMilitaryIndustrialComplex);
 	newNation.setBeer(isBeer);
 	newNation.setFastFood(isFastFood);
 	newNation.setFossilFuels(isFossilFuels);
@@ -208,9 +212,6 @@ public Nation findNationById(int id) {
 	newNation.setAgricultureArea(agricultureArea);
 	newNation.setCampusArea(campusArea);
 	newNation.setCommercialArea(commercialArea);
-	newNation.setWarehouse(newWarehouse);
-	newNation.setCorporateFarming(newCorporateFarming);
-	newNation.setGovernmentGrants(newGovernmentGrants);
 	newNation.setFederalReserve(newFederalReserve);
 	newNation.setNuclearPower(isNuclearPower);
 	newNation.setNuclearReactor(isNuclearReactor);

@@ -207,27 +207,31 @@ Stock Exchange<br>
 
 <c:choose>
 <c:when test="${nation.isIndustryArea()}">
-Industry Area<br>
+<img src="/resources/IndustryArea.png" width="30" height="30" title="Industry Area"/>
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isAgricultureArea()}">
-Agriculture Area<br></c:when>
+<img src="/resources/AgricultureArea.png" width="30" height="30" title="Agriculture Area"/>
+
+</c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isCampusArea()}">
-Campus Area<br>
+<img src="/resources/CampusArea.png" width="30" height="30" title="Campus Area"/>
+
 </c:when>
 <c:otherwise>
 </c:otherwise>
 </c:choose>
 <c:choose>
 <c:when test="${nation.isCommercialArea()}">
-Commercial Area<br>
+<img src="/resources/CommercialArea.png" width="30" height="30" title="Commercial Area"/>
+
 </c:when>
 <c:otherwise>
 </c:otherwise>

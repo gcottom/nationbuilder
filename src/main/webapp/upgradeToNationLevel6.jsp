@@ -14,6 +14,11 @@ Technology:${nation.getTechnology()}/50000<br>
 Production: ${nation.getProduction()}/100000<br>
 Money: ${nation.getMoney()}/1000000<br>
 Population: ${nation.getPopulation()}/1000000</p>
+<p>Built University: ${nation.isUniversity()}<br>
+Built Stock Exchange: ${nation.isStockExchange()}<br>
+Built Advanced Plantation: ${nation.isAdvancedPlantation()}<br>
+Built Factory: ${nation.isFactory()}</p>
+
 <p>Nation Level 6 unlocks level 6 improvements and wonders</p>
 <c:choose>
 <c:when test ="${canBuild.getCanBuild()}">

@@ -38,7 +38,7 @@ public class BuildAdvancedHousingController {
     		canBuild.setCanBuild(true);
     	}
     	model.addAttribute("canBuild", canBuild);
-    	return "buildHousing";
+    	return "buildAdvancedHousing";
 	}
 	
 	@GetMapping ("/buyAdvancedHousing-gc23")

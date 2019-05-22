@@ -59,9 +59,11 @@ public class Nation {
 	private boolean agricultureArea = false;
 	private boolean campusArea = false;
 	private boolean commercialArea =false;
-	private boolean warehouse = false;
-	private boolean corporateFarming = false;
-	private boolean governmentGrants =false;
+	private boolean irs= false;
+	private boolean educationGrants = false;
+	private boolean foodStamps = false;
+	private boolean governmentCenter = false;
+	private boolean militaryIndustrialComplex= false;
 	private boolean federalReserve = false;
 	private boolean atWar= false;
 	private int atWarWith = 0;
@@ -76,6 +78,36 @@ public class Nation {
 	
 	
 	
+	public boolean isIrs() {
+		return irs;
+	}
+	public void setIrs(boolean irs) {
+		this.irs = irs;
+	}
+	public boolean isEducationGrants() {
+		return educationGrants;
+	}
+	public void setEducationGrants(boolean educationGrants) {
+		this.educationGrants = educationGrants;
+	}
+	public boolean isFoodStamps() {
+		return foodStamps;
+	}
+	public void setFoodStamps(boolean foodStamps) {
+		this.foodStamps = foodStamps;
+	}
+	public boolean isGovernmentCenter() {
+		return governmentCenter;
+	}
+	public void setGovernmentCenter(boolean governmentCenter) {
+		this.governmentCenter = governmentCenter;
+	}
+	public boolean isMilitaryIndustrialComplex() {
+		return militaryIndustrialComplex;
+	}
+	public void setMilitaryIndustrialComplex(boolean militaryIndustrialComplex) {
+		this.militaryIndustrialComplex = militaryIndustrialComplex;
+	}
 	public boolean isNuclearReactor() {
 		return nuclearReactor;
 	}
@@ -184,24 +216,7 @@ public class Nation {
 	public void setCommercialArea(boolean commercialArea) {
 		this.commercialArea = commercialArea;
 	}
-	public boolean isWarehouse() {
-		return warehouse;
-	}
-	public void setWarehouse(boolean warehouse) {
-		this.warehouse = warehouse;
-	}
-	public boolean isCorporateFarming() {
-		return corporateFarming;
-	}
-	public void setCorporateFarming(boolean corporateFarming) {
-		this.corporateFarming = corporateFarming;
-	}
-	public boolean isGovernmentGrants() {
-		return governmentGrants;
-	}
-	public void setGovernmentGrants(boolean governmentGrants) {
-		this.governmentGrants = governmentGrants;
-	}
+	
 	public boolean isFederalReserve() {
 		return federalReserve;
 	}

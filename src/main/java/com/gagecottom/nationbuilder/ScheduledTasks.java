@@ -26,7 +26,7 @@ public class ScheduledTasks {
 	WarService warService;
 	@Autowired
 	NationService nationService;
-    @Scheduled(fixedRate =5000)
+    @Scheduled(fixedRate =15000)
     public void Simulate() {
     	if(turnService.existsById(1)==false) {
     		System.out.print("Turn Not Found In DB");
@@ -126,6 +126,58 @@ public class ScheduledTasks {
 			}
 			if(currentNation.isAdvancedForge()) {
 				resources.setProduction(resources.getProduction()+7);
+			}
+			//improvement yields level 5
+			if(currentNation.isStockExchange()) {
+				resources.setMoney(resources.getMoney()+9);
+			}
+			if(currentNation.isUniversity()) {
+				resources.setTechnology(resources.getTechnology()+9);
+			}
+			if(currentNation.isFactory()) {
+				resources.setProduction(resources.getProduction()+9);
+			}
+			if(currentNation.isAdvancedPlantation()) {
+				resources.setPopulation(resources.getPopulation()+9);
+			}
+			//improvement yields level 6
+			if(currentNation.isCommercialArea()) {
+				resources.setMoney(resources.getMoney()+13);
+			}
+			if(currentNation.isCampusArea()) {
+				resources.setTechnology(resources.getTechnology()+13);
+			}
+			if(currentNation.isIndustryArea()) {
+				resources.setProduction(resources.getProduction()+13);	
+			}
+			if(currentNation.isAgricultureArea()) {
+				resources.setPopulation(resources.getPopulation()+13);
+			}
+			//wonder yields
+			if(currentNation.isIrs()) {
+				resources.setMoney(resources.getMoney()+10);
+			}
+			if(currentNation.isFederalReserve()) {
+				resources.setMoney(resources.getMoney()+10);
+			}
+			if(currentNation.isEducationGrants()) {
+				resources.setTechnology(resources.getTechnology()+5);
+				resources.setMoney(resources.getMoney()-5);
+			}
+			if(currentNation.isFoodStamps()) {
+				resources.setPopulation(resources.getPopulation()+5);
+				resources.setMoney(resources.getMoney()-7);
+			}
+			if(currentNation.isGovernmentCenter()) {
+				resources.setMoney(resources.getMoney()+1);
+				resources.setPopulation(resources.getPopulation()+1);
+				resources.setProduction(resources.getProduction()+1);
+				resources.setTechnology(resources.getTechnology()+1);
+			}
+			if(currentNation.isMilitaryIndustrialComplex()) {
+				resources.setMoney(resources.getMoney()+6);
+				resources.setProduction(resources.getProduction()+6);
+				resources.setTechnology(resources.getTechnology()+6);
 			}
 			//resource yields
 			if(currentNation.getResource1().equals("Gold")) {
